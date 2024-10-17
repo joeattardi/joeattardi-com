@@ -1,9 +1,12 @@
 ---
 import FooterLink from './FooterLink.astro';
 ---
-<footer class="footer bg-gray-300 px-4 py-8">
-  <div>© 2024 Joe Attardi</div>
-  <div class="flex items-center gap-4">
+<footer class="footer bg-gray-300 px-4 py-8 relative overflow-hidden">
+  <div>
+    <div class="logo bg-gray-400 w-64 h-64 absolute top-0 -right-4 opacity-30"></div>
+    <div class="relative z-10">© 2024 Joe Attardi</div>
+  </div>
+  <div class="flex items-center gap-4 relative z-10">
     <FooterLink 
       title="jattardi@gmail.com"
       href="mailto:jattardi@gmail.com" 
@@ -28,8 +31,23 @@ import FooterLink from './FooterLink.astro';
 </footer>
 
 <style>
+  @animation rotate {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
   .footer {
     display: grid;
     grid-template-columns: 1fr auto;
+  }
+
+  .logo {
+    animation: rotate 180s linear infinite;
+    mask: url('/caged-ball.svg') no-repeat center;
   }
 </style>
