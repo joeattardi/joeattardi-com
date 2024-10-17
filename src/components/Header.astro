@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets';
+---
+<header class="bg-slate-100 p-4 border-b border-b-zinc-200">
+  <a href="/" class="flex items-center gap-2">
+    <div class="logo-wrapper">
+      <div class="logo w-12 h-12 bg-slate-400"></div>
+    </div>
+    <h1 class="text-2xl font-bold text-slate-700">Joe Attardi</h1>
+  </a>
+</header>
+
+<style>
+  @keyframes appear {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .logo-wrapper {
+    animation: appear 500ms ease-out;
+    animation-delay: 250ms;
+    animation-fill-mode: both;
+  }
+
+  .logo {
+    animation: rotate 60s linear infinite;
+    mask: url('/caged-ball.svg') no-repeat center;
+  }
+</style>
