@@ -1,0 +1,29 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+<button class="dark-mode-toggle">
+  <Icon name="ph:sun" class="toggle-light hidden text-xl dark:text-slate-100" />
+  <Icon name="ph:moon" class="toggle-dark hidden text-xl dark:text-slate-100" />
+</button>
+
+<script>
+  const lightIcon = document.querySelector('.toggle-light');
+  const darkIcon = document.querySelector('.toggle-dark');
+  const toggleButton = document.querySelector<HTMLButtonElement>('.dark-mode-toggle');
+
+  function toggleDarkMode() {
+    const isDarkMode = document.documentElement.classList.toggle('dark');
+    sessionStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    updateIcon(isDarkMode);
+  }
+
+  function updateIcon(isDarkMode: boolean) {
+    lightIcon?.classList.toggle('hidden', isDarkMode);
+    darkIcon?.classList.toggle('hidden', !isDarkMode);
+  }
+
+  toggleButton?.addEventListener('click', toggleDarkMode);
+
+  // Initialize icon based on initial theme
+  updateIcon(document.documentElement.classList.contains('dark'));
+</script>
