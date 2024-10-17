@@ -1,12 +1,12 @@
 ---
 import FooterLink from './FooterLink.astro';
 ---
-<footer class="footer bg-gray-300 dark:bg-gray-700 text-black dark:text-white px-4 py-8 relative overflow-hidden">
+<footer class="footer bg-gray-300 dark:bg-gray-700 text-black dark:text-white px-4 py-8 relative overflow-hidden grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-4">
   <div>
     <div class="logo bg-gray-400 dark:bg-gray-800 w-64 h-64 absolute top-0 -right-4 opacity-30"></div>
     <div class="relative z-10 text-sm">© 2024 Joe Attardi. All rights reserved.</div>
   </div>
-  <div class="flex items-center gap-4 relative z-10">
+  <div class="flex items-center gap-4 relative z-10 sm:justify-self-end">
     <FooterLink 
       title="jattardi@gmail.com"
       href="mailto:jattardi@gmail.com" 
@@ -41,10 +41,7 @@ import FooterLink from './FooterLink.astro';
     }
   }
 
-  .footer {
-    display: grid;
-    grid-template-columns: 1fr auto;
-  }
+
 
   .logo {
     animation: rotate 180s linear infinite;
