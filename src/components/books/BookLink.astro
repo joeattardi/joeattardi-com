@@ -1,16 +1,15 @@
 ---
 import { Image } from 'astro:assets';
 
-const { cover, title, published, href } = Astro.props;
+const { cover, title, href } = Astro.props;
 ---
 <a class="flex flex-col items-center gap-4" href={href}>
   <Image 
     src={cover} 
     alt={title}
-    class="w-48 shadow-lg hover:rotate-2 hover:scale-105 ease-out transition-transform"
+    class="h-72 w-auto shadow-lg hover:rotate-2 hover:scale-105 ease-out transition-transform"
   />
   <div class="flex flex-col items-center">
-    <h3 class="italic text-center">{title}</h3>
-    <small>{published}</small>
+    <h3 class="italic text-center text-2xl">{title}</h3>
   </div>
 </a>
