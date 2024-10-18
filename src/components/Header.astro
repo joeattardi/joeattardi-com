@@ -4,7 +4,7 @@ import NavBar from './NavBar.astro';
 import HamburgerMenu from './HamburgerMenu.astro';
 ---
 <header class="bg-slate-100 z-50 p-4 border-b border-b-zinc-200 dark:border-b-zinc-700 sticky top-0 flex items-center gap-16 dark:bg-zinc-800">
-  <a href="/" class="flex items-center gap-2">
+  <a href="/" class="home-link flex items-center gap-2">
     <div class="logo-wrapper">
       <div class="logo w-12 h-12 bg-slate-600 dark:bg-slate-200"></div>
       <span class="absolute top-0 left-0 w-full h-full flex items-center justify-center text-white dark:text-black">A</span>
@@ -45,13 +45,16 @@ import HamburgerMenu from './HamburgerMenu.astro';
   }
 
   .logo-wrapper {
-    animation: appear 500ms ease-out;
-    animation-delay: 250ms;
-    animation-fill-mode: both;
+    position: relative;
   }
 
   .logo {
-    animation: rotate 120s linear infinite;
     mask: url('/caged-ball.svg') no-repeat center;
+    transform: rotate(0) scale(1);
+    transition: transform 250ms ease-out;
+  }
+
+  .home-link:hover .logo {
+    transform: rotate(45deg) scale(1.1);
   }
 </style>

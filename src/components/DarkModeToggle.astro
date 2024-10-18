@@ -1,9 +1,9 @@
 ---
 import { Icon } from 'astro-icon/components';
 ---
-<button class="dark-mode-toggle hover:scale-110 transition-transform overflow-hidden relative">
-  <Icon name="ph:sun" class="toggle-light text-xl dark:text-slate-100 absolute top-0 left-0" />
-  <Icon name="ph:moon" class="toggle-dark text-xl dark:text-slate-100 absolute top-0 left-0" />
+<button class="dark-mode-toggle hover:scale-110 transition-transform overflow-hidden relative" transition:persist>
+  <Icon name="ph:sun" class="toggle-light opacity-0 text-xl dark:text-slate-100 absolute top-0 left-0" />
+  <Icon name="ph:moon" class="toggle-dark opacity-0 text-xl dark:text-slate-100 absolute top-0 left-0" />
 </button>
 
 <script>
