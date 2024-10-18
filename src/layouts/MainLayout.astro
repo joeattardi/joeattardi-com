@@ -27,7 +27,7 @@ const { title } = Astro.props;
 
 <script>
   const themePreference = sessionStorage.getItem('theme');
-  const isDarkMode = themePreference === 'dark' || window.matchMedia('(prefers-color-scheme: dark').matches;
+  const isDarkMode = themePreference === 'dark' || (themePreference == null && window.matchMedia('(prefers-color-scheme: dark').matches);
   document.documentElement.classList.toggle('dark', isDarkMode);
 </script>
 

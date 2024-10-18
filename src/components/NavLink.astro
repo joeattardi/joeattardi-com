@@ -1,0 +1,21 @@
+---
+const { href } = Astro.props;
+const { pathname } = Astro.url;
+
+const subpath = pathname.match(/[^\/]+/g);
+const isActive = href === pathname || href === '/' + subpath?.[0];
+---
+<li role="none">
+  <a 
+    role="menuitem" 
+    class:list={[
+      'text-xl p-2',
+      { 
+        'font-bold border-b-4 border-b-blue-800': isActive
+      }
+    ]}
+    href={href}
+  >
+      <slot />
+  </a>
+</li>
