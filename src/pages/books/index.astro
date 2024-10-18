@@ -1,7 +1,32 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+import webApiCookbook from './web-api-cookbook-small.jpg';
+import gatsby from './gatsby-small.jpg';
+import modernCss from './modern-css-small.jpg';
+import BookLink from '../../components/books/BookLink.astro';
 ---
 
 <MainLayout title="Books">
+  <h2 class="text-3xl mb-8">Books by Joe Attardi</h2>
 
+  <div class="grid grid-cols-3 gap-8">
+    <BookLink 
+      cover={webApiCookbook} 
+      title="Web API Cookbook"
+      href="/books/web-api-cookbook"
+      published="2024" 
+    />
+    <BookLink 
+      cover={modernCss} 
+      title="Modern CSS"
+      href="/books/modern-css"
+      published="2020" 
+    />
+    <BookLink 
+      cover={gatsby} 
+      title="Using Gatsby and Netlify CMS" 
+      href="/books/using-gatsby-and-netlify-cms"
+      published="2020" 
+    />
+  </div>
 </MainLayout>
