@@ -5,11 +5,10 @@
 </div>
 
 <script>
-  const hamburger = document.querySelector<HTMLDivElement>('.hamburger');
-  const nav = document.querySelector<HTMLUListElement>('#top-nav');
-
-  hamburger?.addEventListener('click', async () => {
-    hamburger.classList.toggle('open');
+  async function onMenuClick() {
+    const hamburger = document.querySelector<HTMLDivElement>('.hamburger');
+    const nav = document.querySelector<HTMLUListElement>('#top-nav');
+    hamburger?.classList.toggle('open');
     nav?.classList.toggle('hidden');
 
     if (nav?.classList.contains('open')) {
@@ -23,7 +22,15 @@
     }
 
     nav?.classList.toggle('open');
-  }); 
+  }
+
+  function init() {
+    const hamburger = document.querySelector<HTMLDivElement>('.hamburger');
+    hamburger?.addEventListener('click', onMenuClick);
+  }
+
+  init();
+  document.addEventListener('astro:after-swap', init);
 </script>
 
 <style>
