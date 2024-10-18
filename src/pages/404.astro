@@ -1,0 +1,19 @@
+---
+import { Icon } from 'astro-icon/components';
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout title="Not Found">
+  <div class="flex gap-8 mt-8">
+    <Icon name="ph:magnifying-glass-duotone" class="icon" />
+    <div class="flex flex-col">
+      <h2 class="text-6xl font-bold">Not Found</h2>
+      <p class="text-3xl">Sorry! We couldn't find what you were looking for.</p>
+    </div>
+  </div>
+</MainLayout>
+
+<style>
+  .icon {
+    font-size: 6rem;
+  }
+</style>
