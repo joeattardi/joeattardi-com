@@ -1,7 +1,9 @@
 ---
-import { Image } from 'astro:assets';
-import FullWidthLayout from '../../../layouts/FullWidthLayout.astro';
-import cover from '../../../images/web-api-cookbook-cover.jpg';
+import { Image } from "astro:assets";
+import { Icon } from 'astro-icon/components';
+import FullWidthLayout from "../../../layouts/FullWidthLayout.astro";
+import cover from "../../../images/web-api-cookbook-cover.jpg";
+import contents from './_contents.json';
 ---
 
 <FullWidthLayout title="Web API Cookbook">
@@ -15,7 +17,9 @@ import cover from '../../../images/web-api-cookbook-cover.jpg';
             alt="Web API Cookbook cover"
           />
           <div class="hero-content flex flex-col gap-4 items-start">
-            <h2 class="text-white sm:text-3xl"><em class="italic">Web API Cookbook</em> by Joe Attardi</h2>
+            <h2 class="text-white sm:text-3xl">
+              <em class="italic">Web API Cookbook</em> by Joe Attardi
+            </h2>
             <p class="text-4xl sm:text-7xl text-white font-bold">
               Master modern web APIs
             </p>
@@ -23,28 +27,89 @@ import cover from '../../../images/web-api-cookbook-cover.jpg';
               Unlock the full potential of modern browsers with hands-on
               guidance through powerful web APIs.
             </p>
-            <a 
-              class="my-8 hover:scale-105 transition-transform bg-orange-600 hover:bg-orange-500 px-4 py-2 text-xl text-white rounded" 
-              href="https://www.amazon.com/Web-API-Cookbook-JavaScript-Applications/dp/1098150694"
-            >
-              Buy from Amazon
-            </a>
+            <div class="mt-4 flex items-center gap-4 flex-wrap">
+              <a
+                class="hover:scale-105 transition-transform bg-orange-600 hover:bg-orange-500 px-4 py-2 text-xl text-white rounded flex items-center gap-2"
+                href="https://www.amazon.com/Web-API-Cookbook-JavaScript-Applications/dp/1098150694"
+              >
+                <Icon name="fa6-brands:amazon" />
+                Buy from Amazon
+              </a>
+              <a
+                class="hover:scale-105 transition-transform bg-orange-600 hover:bg-orange-500 px-4 py-2 text-xl text-white rounded flex items-center gap-2"
+                href="https://www.webapis.info/examples"
+              >
+                <Icon name="ph:code" />
+                Code and demos
+              </a>
+            </div>
+            <div class="text-white flex flex-col gap-2">
+              Also available from:
+              <ul class="flex gap-4 flex-wrap">
+                <li>
+                  <a 
+                    class="bg-blue-700 py-2 px-4 rounded" 
+                    href="https://www.barnesandnoble.com/w/web-api-cookbook-joe-attardi/1144735729?ean=9781098150693"
+                  >
+                    Barnes &amp; Noble
+                  </a>
+                </li>
+                <li><a class="bg-blue-700 py-2 px-4 rounded" href="https://www.oreilly.com/library/view/web-api-cookbook/9781098150686/">O'Reilly Platform</a></li>
+                <li><a class="bg-blue-700 py-2 px-4 rounded" href="https://books.apple.com/us/book/web-api-cookbook/id6479818683">Apple Books</a></li>
+                <li><a class="bg-blue-700 py-2 px-4 rounded" href="https://play.google.com/store/books/details/Joe_Attardi_Web_API_Cookbook?id=ZaT8EAAAQBAJ">Google Play Books</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="w-full max-w-7xl mx-auto p-8">
-      <div class="bg-white rounded border border-slate-300 p-4">
-        Here is some text
+    <div class="w-full max-w-7xl mx-auto p-8 flex flex-col gap-4">
+      <h3 class="text-4xl">About the Book</h3>
+      <div class="bg-white rounded border border-slate-300 p-4 flex flex-col gap-4">
+        <p>
+          JavaScript gives web developers great power to create rich interactive
+          browser experiences, and much of that power is provided by the browser
+          itself. Modern web APIs enable web-based applications to come to life
+          like never before, supporting actions that once required browser
+          plug-ins. Some are still in an experimental stage, but many are ready
+          for use today.
+        </p>
+
+        <p>
+          This hands-on cookbook explores the powerful APIs available in modern
+          browsers and guides you through the specific tasks that they unlock.
+          Because these features are web standards, there is comprehensive
+          documentation available from trusted resources such as MDN Web Docs.
+          The knowledge you'll gain is transferable across different companies
+          and projects.
+        </p>
       </div>
     </div>
+
+    <div class="w-full max-w-7xl mx-auto p-8 flex flex-col gap-4">
+      <h3 class="text-4xl">Contents</h3>
+      <div class="bg-white rounded border border-slate-300 p-4 flex flex-col gap-4">
+        <ol class="list-decimal ml-8 flex flex-col gap-2">
+          {contents.map(item => (
+            <li>
+              <div class="text-xl">{item.name}</div>
+              <div>{item.description}</div>
+            </li>
+          ))}
+        </ol>
+      </div>
   </div>
+
 </FullWidthLayout>
 
 <style>
   @keyframes appear-text {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   @keyframes appear-book {
