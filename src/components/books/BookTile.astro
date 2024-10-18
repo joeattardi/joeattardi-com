@@ -5,7 +5,7 @@ const { title, subtitle, cover, href, published, description } = Astro.props;
 ---
 <div class="grid grid-cols-1 justify-items-center gap-8 sm:grid-cols-[250px_1fr] p-4 rounded">
   <a class="flex w-48 sm:w-64" href={href}>
-    <Image src={cover} alt={title} />
+    <Image class="hover:-rotate-2 hover:scale-105 transition-transform" src={cover} alt={title} />
   </a>
   <div class="flex flex-col gap-4 p-8 items-start">
     <h2 class="text-5xl font-bold"><a href={href}>{title}</a></h2>

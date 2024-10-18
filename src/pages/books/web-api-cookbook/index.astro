@@ -10,11 +10,11 @@ import cover from '../../../images/web-api-cookbook-cover.jpg';
       <div class="w-full max-w-7xl justify-self-center">
         <div class="flex flex-col sm:flex-row items-center gap-16">
           <Image
-            class="w-1/3 sm:-rotate-2 shadow-lg"
+            class="cover w-1/2 sm:w-1/3"
             src={cover}
             alt="Web API Cookbook cover"
           />
-          <div class="flex flex-col gap-4 items-start">
+          <div class="hero-content flex flex-col gap-4 items-start">
             <h2 class="text-white sm:text-3xl"><em class="italic">Web API Cookbook</em> by Joe Attardi</h2>
             <p class="text-4xl sm:text-7xl text-white font-bold">
               Master modern web APIs
@@ -23,14 +23,51 @@ import cover from '../../../images/web-api-cookbook-cover.jpg';
               Unlock the full potential of modern browsers with hands-on
               guidance through powerful web APIs.
             </p>
-            <a class="my-8 bg-orange-600 px-4 py-2 text-xl text-white rounded" href="https://amazon.com">Buy from Amazon</a>
+            <a 
+              class="my-8 hover:scale-105 transition-transform bg-orange-600 hover:bg-orange-500 px-4 py-2 text-xl text-white rounded" 
+              href="https://www.amazon.com/Web-API-Cookbook-JavaScript-Applications/dp/1098150694"
+            >
+              Buy from Amazon
+            </a>
           </div>
         </div>
       </div>
     </div>
-    <div
-      class="hidden sm:block bg-blue-900 w-full h-32 scale-x-110 -rotate-2 -translate-y-24 -top-24"
-    >
+    <div class="w-full max-w-7xl mx-auto p-8">
+      <div class="bg-white rounded border border-slate-300 p-4">
+        Here is some text
+      </div>
     </div>
   </div>
 </FullWidthLayout>
+
+<style>
+  @keyframes appear-text {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes appear-book {
+    from {
+      opacity: 0;
+      transform: scale(0.9) rotate(0);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1) rotate(-2deg);
+    }
+  }
+
+  .cover {
+    animation: appear-book 250ms ease-out;
+    animation-delay: 250ms;
+    animation-fill-mode: both;
+  }
+
+  .hero-content {
+    animation: appear-text 250ms ease-out;
+    animation-delay: 300ms;
+    animation-fill-mode: both;
+  }
+</style>
