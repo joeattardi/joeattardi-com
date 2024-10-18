@@ -7,9 +7,9 @@ import contents from './_contents.json';
 ---
 
 <FullWidthLayout title="Web API Cookbook">
-  <div class="bg-slate-200">
-    <div class="bg-blue-900 w-full p-8 relative z-10 overflow-hidden">
-      <div class="w-full max-w-7xl justify-self-center">
+  <div class="bg-slate-200 dark:bg-zinc-700">
+    <div class="bg-blue-900 dark:bg-blue-800 w-full p-8 relative z-10 overflow-hidden">
+      <div class="w-full max-w-7xl mx-auto justify-self-center">
         <div class="flex flex-col sm:flex-row items-center gap-16">
           <Image
             class="cover w-1/2 sm:w-1/3"
@@ -58,7 +58,7 @@ import contents from './_contents.json';
     </div>
     <div class="w-full max-w-7xl mx-auto p-8 flex flex-col gap-4">
       <h3 class="text-4xl">About the Book</h3>
-      <div class="bg-white rounded border border-slate-300 p-4 flex flex-col gap-4 text-lg">
+      <div class="bg-white dark:bg-zinc-800 rounded border border-slate-300 p-4 flex flex-col gap-4 text-lg">
         <p>
           JavaScript gives web developers great power to create rich interactive
           browser experiences, and much of that power is provided by the browser
@@ -81,7 +81,7 @@ import contents from './_contents.json';
 
     <div class="w-full max-w-7xl mx-auto p-8 flex flex-col gap-4">
       <h3 class="text-4xl">Contents</h3>
-      <div class="bg-white rounded border border-slate-300 p-4 flex flex-col gap-4">
+      <div class="bg-white dark:bg-zinc-800 rounded border border-slate-300 p-4 flex flex-col gap-4">
         <ol class="list-decimal ml-8 flex flex-col gap-2">
           {contents.map(item => (
             <li>
