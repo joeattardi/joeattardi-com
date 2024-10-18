@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import MainLayout from '../../../layouts/MainLayout.astro';
+import cover from './cover.jpg';
+---
+<MainLayout title="Web API Cookbook">
+  <div class="flex flex-col sm:flex-row gap-8 items-center">
+    <Image src={cover} class="w-72 rotate-2 shadow-lg" alt="Web API Cookbook cover" />
+    <div class="flex flex-col gap-4 bg-slate-100 dark:bg-slate-800 rounded-lg p-8 items-start">
+      <h2 class="text-5xl font-bold">Web API Cookbook</h2>
+      <h3 class="text-3xl">Level Up Your JavaScript Applications</h3>
+      <div class="text-xl">Joe Attardi | O'Reilly Media, 2024</div>
+      <p class="text-xl">This hands-on cookbook explores the powerful APIs available in modern browsers and guides you through the specific tasks that they unlock.</p>
+      <a 
+        href="https://www.amazon.com/Web-API-Cookbook-JavaScript-Applications-ebook/dp/B0CW1K187N" 
+        class="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-500 text-white px-4 py-2 rounded"
+      >
+        <div class="text-lg">Buy on Amazon</div>
+      </a>
+    </div>
+  </div>
+</MainLayout>
