@@ -3,8 +3,36 @@ import NavLink from './NavLink.astro';
 ---
 
 <nav>
-  <ul role="menubar" class="flex items-center gap-8">
+  <ul
+    role="menubar"
+    id="top-nav"
+    class:list={[
+      'bg-slate-200 dark:bg-slate-800 dark:border-slate-700 border border-slate-300 w-1/2 p-4 fixed right-0 top-20 m-4 hidden rounded',
+      'sm:border-none sm:bg-transparent sm:dark:bg-transparent sm:w-auto sm:relative sm:flex sm:top-0 sm:items-center sm:gap-4'
+    ]}
+  >
     <NavLink href="/books">Books</NavLink>
     <NavLink href="/articles">Articles</NavLink>
   </ul>
 </nav>
+
+<style>
+  @keyframes open {
+    from {
+      transform: translateX(16px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  #top-nav.open {
+    animation: open 200ms ease-out;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+</style>
