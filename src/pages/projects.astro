@@ -1,0 +1,55 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import ProjectCard from '../components/projects/ProjectCard.astro';
+---
+
+<MainLayout title="Projects">
+    <h2 class="text-4xl">Projects</h2>
+    <h3 class="text-xl">Open Source</h3>
+    <div class="flex flex-col gap-4">
+        <ProjectCard
+            name="json-colorizer"
+            url="https://npmjs.com/package/json-colorizer"
+        >
+            <p>
+                An npm package to pretty-print JSON data with syntax
+                highlighting.
+            </p>
+        </ProjectCard>
+        <ProjectCard
+            name="promise-poller"
+            url="https://npmjs.com/package/promise-poller"
+        >
+            <p>
+                An npm package that provides a Promise based interface for
+                performing polling operations.
+            </p>
+        </ProjectCard>
+        <ProjectCard
+            name="PicMo"
+            url="https://www.npmjs.com/package/picmo"
+        >
+            <p>
+                A vanilla JavaScript emoji picker component. No longer maintained.
+            </p>
+        </ProjectCard>
+        <h3 class="text-xl">Education and Training</h3>
+        <ProjectCard
+            name="Build a Toast Notification System With Svelte"
+            url="https://www.educative.io/projects/build-a-toast-notification-system-with-svelte"
+        >
+            <p>
+                A guided project series on building a basic toast notification
+                system in a Svelte application. Published by Educative.
+            </p>
+
+            <p>
+                In this project, we will start working on a skeleton Svelte
+                application and incorporate a store to effectively manage
+                notification information. After this, we will create Svelte
+                components designed to subscribe to the store and facilitate the
+                display of these notifications.
+            </p>
+        </ProjectCard>
+    </div>
+</MainLayout>
