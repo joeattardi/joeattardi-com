@@ -1,12 +1,25 @@
 ---
+import { Image } from 'astro:assets';
 import MainLayout from '../layouts/MainLayout.astro';
 import ProjectCard from '../components/projects/ProjectCard.astro';
+import webApiDemoImage from '../images/projects/web-api-demos.png';
 ---
 
 <MainLayout title="Projects">
     <h2 class="text-4xl">Projects</h2>
-    <h3 class="text-xl">Open Source</h3>
     <div class="flex flex-col gap-4">
+        <ProjectCard name="Web API Demos" url="https://webapis.info/examples">
+            <div class="flex items-start">
+                <p class="flex-grow">
+                    A collection of demos and sample code from my book, <a
+                        href="/books/web-api-cookbook">Web API Cookbook</a
+                    >. Covers web animations, speech recognition, DOM observers,
+                    and more.
+                </p>
+                <Image src={webApiDemoImage} class="w-64" alt="Web API Demos" />
+            </div>
+        </ProjectCard>
+
         <ProjectCard
             name="json-colorizer"
             url="https://npmjs.com/package/json-colorizer"
@@ -25,15 +38,12 @@ import ProjectCard from '../components/projects/ProjectCard.astro';
                 performing polling operations.
             </p>
         </ProjectCard>
-        <ProjectCard
-            name="PicMo"
-            url="https://www.npmjs.com/package/picmo"
-        >
+        <ProjectCard name="PicMo" url="https://www.npmjs.com/package/picmo">
             <p>
-                A vanilla JavaScript emoji picker component. No longer maintained.
+                A vanilla JavaScript emoji picker component. No longer
+                maintained.
             </p>
         </ProjectCard>
-        <h3 class="text-xl">Education and Training</h3>
         <ProjectCard
             name="Build a Toast Notification System With Svelte"
             url="https://www.educative.io/projects/build-a-toast-notification-system-with-svelte"
