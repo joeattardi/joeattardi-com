@@ -1,8 +1,11 @@
 ---
 const { name, title } = Astro.props;
 ---
-<div class="text-lg w-1/3 dark:bg-zinc-900 bg-white p-4 rounded flex flex-col shadow-lg">
-  <blockquote><slot /></blockquote>
-  <strong class="text-zinc-500 font-bold self-end">- {name}</strong>
-  <div class="text-zinc-500 self-end">{title}</div>
+
+<div
+    class="text-lg w-1/3 dark:bg-zinc-900 bg-white p-4 rounded flex flex-col shadow-lg"
+>
+    <blockquote><slot /></blockquote>
+    <strong class="text-zinc-500 font-bold self-end">- {name}</strong>
+    <div class="text-zinc-500 self-end">{title}</div>
 </div>

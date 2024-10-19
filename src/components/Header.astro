@@ -3,58 +3,64 @@ import DarkModeToggle from './DarkModeToggle.astro';
 import NavBar from './NavBar.astro';
 import HamburgerMenu from './HamburgerMenu.astro';
 ---
-<header class="bg-slate-100 z-50 p-4 border-b border-b-zinc-200 dark:border-b-zinc-700 sticky top-0 flex items-center gap-16 dark:bg-zinc-800">
-  <a href="/" class="home-link flex items-center gap-2">
-    <div class="logo-wrapper">
-      <div class="logo w-12 h-12 bg-slate-600 dark:bg-slate-200"></div>
-      <span class="absolute top-0 left-0 w-full h-full flex items-center justify-center text-white dark:text-black">A</span>
+
+<header
+    class="bg-slate-100 z-50 p-4 border-b border-b-zinc-200 dark:border-b-zinc-700 sticky top-0 flex items-center gap-16 dark:bg-zinc-800"
+>
+    <a href="/" class="home-link flex items-center gap-2">
+        <div class="logo-wrapper">
+            <div class="logo w-12 h-12 bg-slate-600 dark:bg-slate-200"></div>
+            <span
+                class="absolute top-0 left-0 w-full h-full flex items-center justify-center text-white dark:text-black"
+                >A</span
+            >
+        </div>
+        <h1 class="text-slate-700 dark:text-slate-100 flex flex-col gap-2">
+            <div class="text-xl leading-4">Joe</div>
+            <div class="text-2xl leading-4 font-bold">Attardi</div>
+        </h1>
+    </a>
+    <NavBar />
+    <div class="flex-grow flex items-center justify-end gap-4">
+        <DarkModeToggle />
+        <HamburgerMenu />
     </div>
-    <h1 class="text-slate-700 dark:text-slate-100 flex flex-col gap-2">
-      <div class="text-xl leading-4">Joe</div> 
-      <div class="text-2xl leading-4 font-bold">Attardi</div>
-    </h1>
-  </a>
-  <NavBar />
-  <div class="flex-grow flex items-center justify-end gap-4">
-    <DarkModeToggle />
-    <HamburgerMenu />
-  </div>
 </header>
 
 <style>
-  @keyframes appear {
-    from {
-      transform: scale(0.9);
-      opacity: 0;
+    @keyframes appear {
+        from {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
     }
 
-    to {
-      transform: scale(1);
-      opacity: 1;
+    @keyframes rotate {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
     }
-  }
 
-  @keyframes rotate {
-    from {
-      transform: rotate(0);
+    .logo-wrapper {
+        position: relative;
     }
 
-    to {
-      transform: rotate(360deg);
+    .logo {
+        mask: url('/caged-ball.svg') no-repeat center;
+        transform: rotate(0) scale(1);
+        transition: transform 250ms ease-out;
     }
-  }
 
-  .logo-wrapper {
-    position: relative;
-  }
-
-  .logo {
-    mask: url('/caged-ball.svg') no-repeat center;
-    transform: rotate(0) scale(1);
-    transition: transform 250ms ease-out;
-  }
-
-  .home-link:hover .logo {
-    transform: rotate(45deg) scale(1.1);
-  }
+    .home-link:hover .logo {
+        transform: rotate(45deg) scale(1.1);
+    }
 </style>

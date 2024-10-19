@@ -1,50 +1,56 @@
 ---
 import FooterLink from './FooterLink.astro';
 ---
-<footer class="footer bg-gray-300 dark:bg-gray-700 text-black dark:text-white px-4 py-8 relative overflow-hidden grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-4">
-  <div class="sm:justify-self-start">
-    <div class="logo bg-gray-400 dark:bg-gray-800 w-64 h-64 absolute top-0 -right-4 opacity-30"></div>
-    <div class="relative z-10">© 2024 Joe Attardi. All rights reserved.</div>
-  </div>
-  <div class="flex items-center gap-4 relative z-10 sm:justify-self-end">
-    <FooterLink 
-      title="jattardi@gmail.com"
-      href="mailto:jattardi@gmail.com" 
-      icon="ph:envelope" 
-    />
-    <FooterLink 
-      title="X"
-      href="https://twitter.com/JoeAttardi" 
-      icon="fa6-brands:x-twitter" 
-    />
-    <FooterLink 
-      title="LinkedIn"
-      href="https://linkedin.com/in/JoeAttardi" 
-      icon="fa6-brands:linkedin" 
-    />
-    <FooterLink 
-      title="GitHub"
-      href="https://github.com/JoeAttardi" 
-      icon="fa6-brands:github" 
-    />
-  </div>
+
+<footer
+    class="footer bg-gray-300 dark:bg-gray-700 text-black dark:text-white px-4 py-8 relative overflow-hidden grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-4"
+>
+    <div class="sm:justify-self-start">
+        <div
+            class="logo bg-gray-400 dark:bg-gray-800 w-64 h-64 absolute top-0 -right-4 opacity-30"
+        >
+        </div>
+        <div class="relative z-10">
+            © 2024 Joe Attardi. All rights reserved.
+        </div>
+    </div>
+    <div class="flex items-center gap-4 relative z-10 sm:justify-self-end">
+        <FooterLink
+            title="jattardi@gmail.com"
+            href="mailto:jattardi@gmail.com"
+            icon="ph:envelope"
+        />
+        <FooterLink
+            title="X"
+            href="https://twitter.com/JoeAttardi"
+            icon="fa6-brands:x-twitter"
+        />
+        <FooterLink
+            title="LinkedIn"
+            href="https://linkedin.com/in/JoeAttardi"
+            icon="fa6-brands:linkedin"
+        />
+        <FooterLink
+            title="GitHub"
+            href="https://github.com/JoeAttardi"
+            icon="fa6-brands:github"
+        />
+    </div>
 </footer>
 
 <style>
-  @animation rotate {
-    from {
-      transform: rotate(0);
+    @animation rotate {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
     }
 
-    to {
-      transform: rotate(360deg);
+    .logo {
+        animation: rotate 180s linear infinite;
+        mask: url('/caged-ball.svg') no-repeat center;
     }
-  }
-
-
-
-  .logo {
-    animation: rotate 180s linear infinite;
-    mask: url('/caged-ball.svg') no-repeat center;
-  }
 </style>

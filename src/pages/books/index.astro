@@ -8,38 +8,38 @@ import BookTile from '../../components/books/BookTile.astro';
 ---
 
 <MainLayout title="Books">
-  <h2 class="text-4xl mb-8">Books by Joe Attardi</h2>
+    <h2 class="text-4xl mb-8">Books by Joe Attardi</h2>
 
-  <div class="flex flex-col gap-8">
-    <BookTile
-      cover={webApiCookbook}
-      title="Web API Cookbook"
-      subtitle="Level Up Your JavaScript Applications"
-      published="O'Reilly Media, 2024"
-      description="This hands-on cookbook explores the powerful APIs available in modern browsers and guides you through the specific tasks that they unlock."
-      href="/books/web-api-cookbook"
-    />
+    <div class="flex flex-col gap-8">
+        <BookTile
+            cover={webApiCookbook}
+            title="Web API Cookbook"
+            subtitle="Level Up Your JavaScript Applications"
+            published="O'Reilly Media, 2024"
+            description="This hands-on cookbook explores the powerful APIs available in modern browsers and guides you through the specific tasks that they unlock."
+            href="/books/web-api-cookbook"
+        />
 
-    <BookTile
-      cover={modernCss}
-      title="Modern CSS"
-      subtitle="Master the Key Concepts of CSS for Modern Web Development"
-      published="Apress, 2020"
-      description="Come on a tour of “modern” CSS in 2020. This example-driven book demonstrates the concepts by showing code examples, screenshots, and diagrams to help clearly communicate the information."
-      href="/books/modern-css"
-    />
+        <BookTile
+            cover={modernCss}
+            title="Modern CSS"
+            subtitle="Master the Key Concepts of CSS for Modern Web Development"
+            published="Apress, 2020"
+            description="Come on a tour of “modern” CSS in 2020. This example-driven book demonstrates the concepts by showing code examples, screenshots, and diagrams to help clearly communicate the information."
+            href="/books/modern-css"
+        />
 
-    <BookTile
-      cover={gatsby}
-      title="Using Gatsby and Netlify CMS"
-      subtitle="Build Blazing Fast JAMstack Apps Using Gatsby and Netlify CMS"
-      published="Apress, 2020"
-      description="Leverage the powerful new combination of Gatsby and Netlify CMS, a free open source content management solution, to build blazing fast apps."
-      href="/books/using-gatsby-and-netlify-cms"
-    />
-  </div>
+        <BookTile
+            cover={gatsby}
+            title="Using Gatsby and Netlify CMS"
+            subtitle="Build Blazing Fast JAMstack Apps Using Gatsby and Netlify CMS"
+            published="Apress, 2020"
+            description="Leverage the powerful new combination of Gatsby and Netlify CMS, a free open source content management solution, to build blazing fast apps."
+            href="/books/using-gatsby-and-netlify-cms"
+        />
+    </div>
 
-  <!-- <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+    <!-- <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
     <BookLink 
       cover={webApiCookbook} 
       title="Web API Cookbook"

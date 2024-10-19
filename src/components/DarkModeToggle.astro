@@ -1,73 +1,96 @@
 ---
 import { Icon } from 'astro-icon/components';
 ---
-<button class="dark-mode-toggle hover:scale-110 transition-transform overflow-hidden relative" transition:persist>
-  <Icon name="ph:sun" class="toggle-light opacity-0 text-xl dark:text-slate-100 absolute top-0 left-0" />
-  <Icon name="ph:moon" class="toggle-dark opacity-0 text-xl dark:text-slate-100 absolute top-0 left-0" />
+
+<button
+    class="dark-mode-toggle hover:scale-110 transition-transform overflow-hidden relative"
+    transition:persist
+>
+    <Icon
+        name="ph:sun"
+        class="toggle-light opacity-0 text-xl dark:text-slate-100 absolute top-0 left-0"
+    />
+    <Icon
+        name="ph:moon"
+        class="toggle-dark opacity-0 text-xl dark:text-slate-100 absolute top-0 left-0"
+    />
 </button>
 
 <script>
-  const lightIcon = document.querySelector<HTMLElement>('.toggle-light');
-  const darkIcon = document.querySelector<HTMLElement>('.toggle-dark');
-  const toggleButton = document.querySelector<HTMLButtonElement>('.dark-mode-toggle');
+    const lightIcon = document.querySelector<HTMLElement>('.toggle-light');
+    const darkIcon = document.querySelector<HTMLElement>('.toggle-dark');
+    const toggleButton =
+        document.querySelector<HTMLButtonElement>('.dark-mode-toggle');
 
-  async function toggleDarkMode() {
-    const isDarkMode = document.documentElement.classList.contains('dark');
-    await updateIcon(isDarkMode);
-    sessionStorage.setItem('theme', isDarkMode ? 'light' : 'dark');
-    document.documentElement.classList.toggle('dark', !isDarkMode);
-  }
-
-  function animateIcon(icon: HTMLElement | null, keyframes: Keyframe[]) {
-    return icon?.animate(keyframes, {
-      duration: 200,
-      easing: 'ease-out',
-      fill: 'both'
-    }).finished
-  }
-
-  function animateIconIn(icon: HTMLElement | null, fromDirection: string) {
-    return animateIcon(icon, [
-      { opacity: 0, transform: fromDirection === 'left' ? 'translateX(-100%)' : 'translateX(100%)' },
-      { opacity: 1, transform: 'translateX(0)' }
-    ]);
-  }
-
-  function animateIconOut(icon: HTMLElement | null, toDirection: string) {
-    return animateIcon(icon, [
-      { opacity: 1, transform: 'translateX(0)' },
-      { opacity: 0, transform: toDirection === 'left' ? 'translateX(-100%)' : 'translateX(100%)' }
-    ]);
-  }
-
-  async function updateIcon(isDarkMode: boolean) {
-    if (!isDarkMode) {
-      await Promise.all([
-        animateIconOut(lightIcon, 'left'),
-        animateIconIn(darkIcon, 'right')
-      ]);
-    } else {
-      await Promise.all([
-        animateIconOut(darkIcon, 'right'),
-        animateIconIn(lightIcon, 'left')
-      ]);
+    async function toggleDarkMode() {
+        const isDarkMode = document.documentElement.classList.contains('dark');
+        await updateIcon(isDarkMode);
+        sessionStorage.setItem('theme', isDarkMode ? 'light' : 'dark');
+        document.documentElement.classList.toggle('dark', !isDarkMode);
     }
 
-    lightIcon?.classList.toggle('opacity-0', !isDarkMode);
-    darkIcon?.classList.toggle('opacity-0', isDarkMode);
-  }
+    function animateIcon(icon: HTMLElement | null, keyframes: Keyframe[]) {
+        return icon?.animate(keyframes, {
+            duration: 200,
+            easing: 'ease-out',
+            fill: 'both'
+        }).finished;
+    }
 
-  toggleButton?.addEventListener('click', toggleDarkMode);
+    function animateIconIn(icon: HTMLElement | null, fromDirection: string) {
+        return animateIcon(icon, [
+            {
+                opacity: 0,
+                transform:
+                    fromDirection === 'left'
+                        ? 'translateX(-100%)'
+                        : 'translateX(100%)'
+            },
+            { opacity: 1, transform: 'translateX(0)' }
+        ]);
+    }
 
-  // Initialize icon based on initial theme
-  const initialDarkMode = document.documentElement.classList.contains('dark');
-  lightIcon?.classList.toggle('opacity-0', initialDarkMode);
-  darkIcon?.classList.toggle('opacity-0', !initialDarkMode);
+    function animateIconOut(icon: HTMLElement | null, toDirection: string) {
+        return animateIcon(icon, [
+            { opacity: 1, transform: 'translateX(0)' },
+            {
+                opacity: 0,
+                transform:
+                    toDirection === 'left'
+                        ? 'translateX(-100%)'
+                        : 'translateX(100%)'
+            }
+        ]);
+    }
+
+    async function updateIcon(isDarkMode: boolean) {
+        if (!isDarkMode) {
+            await Promise.all([
+                animateIconOut(lightIcon, 'left'),
+                animateIconIn(darkIcon, 'right')
+            ]);
+        } else {
+            await Promise.all([
+                animateIconOut(darkIcon, 'right'),
+                animateIconIn(lightIcon, 'left')
+            ]);
+        }
+
+        lightIcon?.classList.toggle('opacity-0', !isDarkMode);
+        darkIcon?.classList.toggle('opacity-0', isDarkMode);
+    }
+
+    toggleButton?.addEventListener('click', toggleDarkMode);
+
+    // Initialize icon based on initial theme
+    const initialDarkMode = document.documentElement.classList.contains('dark');
+    lightIcon?.classList.toggle('opacity-0', initialDarkMode);
+    darkIcon?.classList.toggle('opacity-0', !initialDarkMode);
 </script>
 
 <style>
-  .dark-mode-toggle {
-    width: 20px;
-    height: 20px;
-  }
+    .dark-mode-toggle {
+        width: 20px;
+        height: 20px;
+    }
 </style>

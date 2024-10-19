@@ -1,170 +1,177 @@
 ---
-import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
-import FullWidthLayout from "../../../layouts/FullWidthLayout.astro";
-import Testimonial from "../../../components/books/Testimonial.astro";
-import cover from "../../../images/modern-css-cover.jpg";
-import contents from "./_contents.json";
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import FullWidthLayout from '../../../layouts/FullWidthLayout.astro';
+import Testimonial from '../../../components/books/Testimonial.astro';
+import cover from '../../../images/modern-css-cover.jpg';
+import contents from './_contents.json';
 ---
 
 <FullWidthLayout title="Modern CSS">
-  <div class="bg-slate-200 dark:bg-zinc-700">
-    <div class="hero bg-blue-800 w-full p-12 relative z-10 overflow-hidden">
-      <div class="w-full max-w-7xl mx-auto justify-self-center">
-        <div class="flex flex-col sm:flex-row items-center gap-16">
-          <Image
-            class="cover w-1/2 sm:w-1/3"
-            src={cover}
-            alt="Modern CSS cover"
-          />
-          <div class="hero-content flex flex-col gap-4 items-start">
-            <div>
-              <h2 class="text-white text-4xl">Modern CSS</h2>
-              <p class="text-white text-2xl">
-                Master the Key Concepts of CSS for Modern Web Development
-              </p>
-              <p class="text-white">by Joe Attardi</p>
+    <div class="bg-slate-200 dark:bg-zinc-700">
+        <div class="hero bg-blue-800 w-full p-12 relative z-10 overflow-hidden">
+            <div class="w-full max-w-7xl mx-auto justify-self-center">
+                <div class="flex flex-col sm:flex-row items-center gap-16">
+                    <Image
+                        class="cover w-1/2 sm:w-1/3"
+                        src={cover}
+                        alt="Modern CSS cover"
+                    />
+                    <div class="hero-content flex flex-col gap-4 items-start">
+                        <div>
+                            <h2 class="text-white text-4xl">Modern CSS</h2>
+                            <p class="text-white text-2xl">
+                                Master the Key Concepts of CSS for Modern Web
+                                Development
+                            </p>
+                            <p class="text-white">by Joe Attardi</p>
+                        </div>
+                        <p class="text-4xl sm:text-7xl text-white font-bold">
+                            Become a CSS expert.
+                        </p>
+                        <p class="text-2xl sm:text-4xl text-white">
+                            A guided tour of modern CSS features.
+                        </p>
+                        <div class="mt-4 flex items-center gap-4 flex-wrap">
+                            <a
+                                class="hover:scale-105 transition-transform bg-orange-600 hover:bg-orange-500 px-4 py-2 text-xl text-white rounded flex items-center gap-2"
+                                href="https://www.amazon.com/Modern-CSS-Master-Concepts-Development/dp/148426293X"
+                            >
+                                <Icon name="fa6-brands:amazon" />
+                                Buy from Amazon
+                            </a>
+                        </div>
+                        <div class="text-white flex flex-col gap-2">
+                            Also available from:
+                            <ul class="flex flex-wrap gap-2">
+                                <li>
+                                    <a
+                                        class="bg-blue-700 py-2 px-4 rounded block"
+                                        href="https://www.barnesandnoble.com/w/modern-css-joe-attardi/1137355059?ean=9781484262931"
+                                        >Barnes &amp; Noble</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        class="bg-blue-700 py-2 px-4 rounded block"
+                                        href="https://link.springer.com/book/10.1007/978-1-4842-6294-8"
+                                        >Apress</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        class="bg-blue-700 py-2 px-4 rounded block"
+                                        href="https://books.apple.com/us/book/modern-css/id1534750842"
+                                        >Apple Books</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="text-4xl sm:text-7xl text-white font-bold">
-              Become a CSS expert.
-            </p>
-            <p class="text-2xl sm:text-4xl text-white">
-              A guided tour of modern CSS features.
-            </p>
-            <div class="mt-4 flex items-center gap-4 flex-wrap">
-              <a
-                class="hover:scale-105 transition-transform bg-orange-600 hover:bg-orange-500 px-4 py-2 text-xl text-white rounded flex items-center gap-2"
-                href="https://www.amazon.com/Modern-CSS-Master-Concepts-Development/dp/148426293X"
-              >
-                <Icon name="fa6-brands:amazon" />
-                Buy from Amazon
-              </a>
-            </div>
-            <div class="text-white flex flex-col gap-2">
-              Also available from:
-              <ul class="flex flex-wrap gap-2">
-                <li>
-                  <a
-                    class="bg-blue-700 py-2 px-4 rounded block"
-                    href="https://www.barnesandnoble.com/w/modern-css-joe-attardi/1137355059?ean=9781484262931"
-                    >Barnes &amp; Noble</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="bg-blue-700 py-2 px-4 rounded block"
-                    href="https://link.springer.com/book/10.1007/978-1-4842-6294-8"
-                    >Apress</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="bg-blue-700 py-2 px-4 rounded block"
-                    href="https://books.apple.com/us/book/modern-css/id1534750842"
-                    >Apple Books</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
-      </div>
+        <div class="w-full max-w-7xl mx-auto p-8 flex flex-col gap-4">
+            <h3 class="text-4xl">About the Book</h3>
+            <div
+                class="bg-white dark:bg-zinc-800 rounded border border-slate-300 p-4 flex flex-col gap-4 text-lg"
+            >
+                <p>
+                    Come on a tour of “modern” CSS in 2020. This example-driven
+                    book demonstrates the concepts by showing code examples,
+                    screenshots, and diagrams to help clearly communicate the
+                    information.
+                </p>
+
+                <p>
+                    You'll start with the very basics of CSS: box model, colors,
+                    selectors and combinators, and specificity. Then gradually
+                    move through more intermediate topics - styling text,
+                    positioning, Z-index and stacking contexts, gradients,
+                    borders, and then to more advanced topics such as
+                    transforms, transitions, animations, flexbox, and CSS grid.
+                    Some features are only available in modern browsers (Chrome,
+                    Edge, Safari, and Firefox), but information about IE11
+                    compatibility is included where possible.
+                </p>
+
+                <p>
+                    There is a lot of discussion about how hard CSS is, and how
+                    intimidated some people are by it, but it doesn’t have to be
+                    this way. Modern CSS uses a logical and understandable
+                    approach to break down and clearly explain the ins and outs
+                    of CSS.
+                </p>
+
+                <p>With this book, you'll:</p>
+
+                <ul class="list-disc ml-8">
+                    <li>
+                        Work with the syntax of CSS selectors and calculate
+                        specificity
+                    </li>
+                    <li>Use styling techniques, fonts and text styling</li>
+                    <li>Review custom properties (variables)</li>
+                    <li>
+                        Explore the different ways an element can be transformed
+                    </li>
+                    <li>Use animating elements with CSS transitions</li>
+                    <li>Position elements using Flexbox layout</li>
+                    <li>Understand the basics of responsive design</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="w-full max-w-7xl mx-auto p-8 flex flex-col gap-4">
+            <h3 class="text-4xl">Contents</h3>
+            <div
+                class="bg-white dark:bg-zinc-800 rounded border border-slate-300 p-4 flex flex-col gap-4"
+            >
+                <ol class="list-decimal ml-8 flex flex-col gap-2">
+                    {
+                        contents.map((item) => (
+                            <li>
+                                <div class="text-xl">{item.name}</div>
+                            </li>
+                        ))
+                    }
+                </ol>
+            </div>
+        </div>
     </div>
-    <div class="w-full max-w-7xl mx-auto p-8 flex flex-col gap-4">
-      <h3 class="text-4xl">About the Book</h3>
-      <div
-        class="bg-white dark:bg-zinc-800 rounded border border-slate-300 p-4 flex flex-col gap-4 text-lg"
-      >
-        <p>
-          Come on a tour of “modern” CSS in 2020. This example-driven book
-          demonstrates the concepts by showing code examples, screenshots, and
-          diagrams to help clearly communicate the information.
-        </p>
 
-        <p>
-          You'll start with the very basics of CSS: box model, colors, selectors
-          and combinators, and specificity. Then gradually move through more
-          intermediate topics - styling text, positioning, Z-index and stacking
-          contexts, gradients, borders, and then to more advanced topics such as
-          transforms, transitions, animations, flexbox, and CSS grid. Some
-          features are only available in modern browsers (Chrome, Edge, Safari,
-          and Firefox), but information about IE11 compatibility is included
-          where possible.
-        </p>
+    <style>
+        @keyframes appear-text {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
-        <p>
-          There is a lot of discussion about how hard CSS is, and how
-          intimidated some people are by it, but it doesn’t have to be this way.
-          Modern CSS uses a logical and understandable approach to break down
-          and clearly explain the ins and outs of CSS.
-        </p>
+        @keyframes appear-book {
+            from {
+                opacity: 0;
+                transform: scale(0.9) rotate(0);
+            }
 
-        <p>With this book, you'll:</p>
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(-2deg);
+            }
+        }
 
-        <ul class="list-disc ml-8">
-          <li>
-            Work with the syntax of CSS selectors and calculate specificity
-          </li>
-          <li>Use styling techniques, fonts and text styling</li>
-          <li>Review custom properties (variables)</li>
-          <li>Explore the different ways an element can be transformed</li>
-          <li>Use animating elements with CSS transitions</li>
-          <li>Position elements using Flexbox layout</li>
-          <li>Understand the basics of responsive design</li>
-        </ul>
-      </div>
-    </div>
+        .cover {
+            animation: appear-book 250ms ease-out;
+            animation-delay: 250ms;
+            animation-fill-mode: both;
+        }
 
-    <div class="w-full max-w-7xl mx-auto p-8 flex flex-col gap-4">
-      <h3 class="text-4xl">Contents</h3>
-      <div
-        class="bg-white dark:bg-zinc-800 rounded border border-slate-300 p-4 flex flex-col gap-4"
-      >
-        <ol class="list-decimal ml-8 flex flex-col gap-2">
-          {
-            contents.map((item) => (
-              <li>
-                <div class="text-xl">{item.name}</div>
-              </li>
-            ))
-          }
-        </ol>
-      </div>
-    </div>
-  </div>
-
-  <style>
-    @keyframes appear-text {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes appear-book {
-      from {
-        opacity: 0;
-        transform: scale(0.9) rotate(0);
-      }
-
-      to {
-        opacity: 1;
-        transform: scale(1) rotate(-2deg);
-      }
-    }
-
-    .cover {
-      animation: appear-book 250ms ease-out;
-      animation-delay: 250ms;
-      animation-fill-mode: both;
-    }
-
-    .hero-content {
-      animation: appear-text 250ms ease-out;
-      animation-delay: 300ms;
-      animation-fill-mode: both;
-    }
-  </style>
+        .hero-content {
+            animation: appear-text 250ms ease-out;
+            animation-delay: 300ms;
+            animation-fill-mode: both;
+        }
+    </style>
 </FullWidthLayout>

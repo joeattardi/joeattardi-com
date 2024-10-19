@@ -9,38 +9,46 @@ import Footer from '../components/Footer.astro';
 
 const { title } = Astro.props;
 ---
+
 <html lang="en">
-  <head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-    <title>{title ? `${title} | Joe Attardi` : 'Joe Attardi'}</title>
-    <ViewTransitions />
-    <script is:inline>
-      const themePreference = sessionStorage.getItem('theme');
-      const isDarkMode = themePreference === 'dark' || (themePreference == null && window.matchMedia('(prefers-color-scheme: dark').matches);
-      document.documentElement.classList.toggle('dark', isDarkMode);
-    
-      document.addEventListener('astro:after-swap', () => {
-        const themePreference = sessionStorage.getItem('theme');
-        const isDarkMode = themePreference === 'dark' || (themePreference == null && window.matchMedia('(prefers-color-scheme: dark').matches);
-        document.documentElement.classList.toggle('dark', isDarkMode);
-      });
-    </script>
-  </head>
-  <body class="dark:bg-black text-black dark:text-white transition-colors">
-    <div class="layout">
-      <Header />
-      <slot />
-      <Footer />
-    </div>
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <title>{title ? `${title} | Joe Attardi` : 'Joe Attardi'}</title>
+        <ViewTransitions />
+        <script is:inline>
+            const themePreference = sessionStorage.getItem('theme');
+            const isDarkMode =
+                themePreference === 'dark' ||
+                (themePreference == null &&
+                    window.matchMedia('(prefers-color-scheme: dark').matches);
+            document.documentElement.classList.toggle('dark', isDarkMode);
+
+            document.addEventListener('astro:after-swap', () => {
+                const themePreference = sessionStorage.getItem('theme');
+                const isDarkMode =
+                    themePreference === 'dark' ||
+                    (themePreference == null &&
+                        window.matchMedia('(prefers-color-scheme: dark')
+                            .matches);
+                document.documentElement.classList.toggle('dark', isDarkMode);
+            });
+        </script>
+    </head>
+    <body class="dark:bg-black text-black dark:text-white transition-colors">
+        <div class="layout">
+            <Header />
+            <slot />
+            <Footer />
+        </div>
+    </body>
 </html>
 
 <style>
-  .layout {
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: min-content 1fr min-content;
-  }
+    .layout {
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: min-content 1fr min-content;
+    }
 </style>

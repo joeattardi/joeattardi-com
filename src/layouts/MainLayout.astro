@@ -3,8 +3,9 @@ import BaseLayout from './BaseLayout.astro';
 
 const { title } = Astro.props;
 ---
+
 <BaseLayout title={title}>
-  <main class="p-4 w-full max-w-7xl justify-self-center">
-    <slot />
-  </main>
+    <main class="p-4 w-full max-w-7xl justify-self-center">
+        <slot />
+    </main>
 </BaseLayout>

@@ -1,38 +1,38 @@
 [
-  {
-    "name": "Introduction to CSS"
-  },
-  {
-    "name": "CSS Selectors"
-  },
-  {
-    "name": "Basic CSS Concepts"
-  },
-  {
-    "name": "Basic Styling"
-  },
-  {
-    "name": "Backgrounds and Gradients"
-  },
-  {
-    "name": "Text Styling"
-  },
-  {
-    "name": "Layout and Positioning"
-  },
-  {
-    "name": "Transforms"
-  },
-  {
-    "name": "Transitions and Animations"
-  },
-  {
-    "name": "Flexbox"
-  },
-  {
-    "name": "Responsive Design"
-  },
-  {
-    "name": "CSS Grid"
-  }
+    {
+        "name": "Introduction to CSS"
+    },
+    {
+        "name": "CSS Selectors"
+    },
+    {
+        "name": "Basic CSS Concepts"
+    },
+    {
+        "name": "Basic Styling"
+    },
+    {
+        "name": "Backgrounds and Gradients"
+    },
+    {
+        "name": "Text Styling"
+    },
+    {
+        "name": "Layout and Positioning"
+    },
+    {
+        "name": "Transforms"
+    },
+    {
+        "name": "Transitions and Animations"
+    },
+    {
+        "name": "Flexbox"
+    },
+    {
+        "name": "Responsive Design"
+    },
+    {
+        "name": "CSS Grid"
+    }
 ]
