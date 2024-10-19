@@ -10,18 +10,6 @@ import contents from "./_contents.json";
 <FullWidthLayout title="Web API Cookbook">
   <div class="bg-slate-200 dark:bg-zinc-700">
     <div
-      class="fixed-header bg-blue-900 fixed z-[100] w-full text-white p-4 flex items-center justify-between opacity-0 transition-opacity"
-    >
-      <h2 class="text-2xl">Web API Cookbook</h2>
-      <a
-        class="hover:scale-105 transition-transform bg-orange-600 hover:bg-orange-500 px-4 py-2  text-white rounded flex items-center gap-2"
-        href="https://www.amazon.com/Web-API-Cookbook-JavaScript-Applications/dp/1098150694"
-      >
-        <Icon name="fa6-brands:amazon" />
-        Buy from Amazon
-      </a>
-    </div>
-    <div
       class="hero bg-blue-900 dark:bg-blue-800 w-full p-12 relative z-10 overflow-hidden"
     >
       <div class="w-full max-w-7xl mx-auto justify-self-center">
@@ -182,13 +170,6 @@ import contents from "./_contents.json";
       </div>
     </div>
   </div>
-
-  <script>
-    import { observeForHeader } from './sticky-header';
-
-    observeForHeader();
-    document.addEventListener('astro:after-swap', observeForHeader);
-  </script>
 
   <style>
     @keyframes appear-text {
