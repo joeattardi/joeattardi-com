@@ -12,7 +12,8 @@ const isActive = href === pathname || href === '/' + subpath?.[0];
         class:list={[
             'text-xl p-2',
             {
-                'sm:font-bold sm:border-b-4 sm:border-b-blue-700': isActive
+                'sm:font-bold sm:border-b-4 sm:border-b-blue-700': isActive,
+                'hover:border-b-4 border-b-blue-200': !isActive
             }
         ]}
         href={href}
