@@ -1,5 +1,19 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import Article from '../components/Article.astro';
+
+import articles from '../data/articles.json';
+
+articles.sort((a, b) => b.date.localeCompare(a.date));
 ---
 
-<MainLayout title="Articles"> ARTICLES </MainLayout>
+<MainLayout title="Articles">
+    <h2 class="text-4xl">Articles by Joe Attardi</h2>
+    <p class="text-lg">Articles I've written for other publications.</p>
+
+    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+        {articles.map(article => (
+            <Article article={article} />
+        ))}
+    </ul>
+</MainLayout>
