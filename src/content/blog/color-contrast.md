@@ -4,8 +4,6 @@ description: "There are many aspects of accessibility that you need to keep in m
 pubDate: "2023-10-06"
 ---
 
-# Understanding color contrast for accessibility
-
 Accessibility is a popular topic these days - as it should be. There are many benefits of making your application accessible - it promotes inclusivity by making your app usable by everyone.
 
 There are many aspects of accessibility that you need to keep in mind, one of which is color contrast. Proper color contrast not only looks good, but it's critical for users with low vision.

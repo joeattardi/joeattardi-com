@@ -3,8 +3,6 @@ title: "In defense of the humble `console.log`"
 description: "The debugger is powerful, but sometimes a `console.log` is still a useful debugging tool."
 pubDate: "2019-08-07"
 ---
-# In defense of the humble `console.log`
-
 There is some negative sentiment out there about using `console.log` for debugging. It's true that, in
 many cases, the browser's debugger is more powerful. However, there are still scenarios where using
 `console.log` can be very useful.

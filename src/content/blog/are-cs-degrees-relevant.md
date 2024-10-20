@@ -5,8 +5,6 @@ image: '/blog/college-degree.jpg'
 imageCredit: 'Charles DeLoye/Unsplash'
 pubDate: 'Oct 13 2023'
 ---
-# Are Computer Science degrees still relevant?
-
 I took a more traditional path into tech, going to a 4-year university and getting a Computer Science degree (way back in 2004!). These days, it's no secret that there are many alternate paths to a software development job. The three main paths today are:
 
 1. Traditional CS education

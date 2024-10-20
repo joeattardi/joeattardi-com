@@ -4,7 +4,6 @@ description: "LLMs and AI coding assistants are all the rage. But what if you ca
 image: '/blog/robot-computer.jpg'
 pubDate: '2024-09-12'
 ---
-# Steps for installing a local AI copilot in Visual Studio Code
 
 Does your company block ChatGPT or GitHub Copilot? Do you have security or trust concerns sending your code to a third party AI service? You might not know this, but you can run a large language model (LLM) locally on your computer, and even integrate it with Visual Studio Code.
 

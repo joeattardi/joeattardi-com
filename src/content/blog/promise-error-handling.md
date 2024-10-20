@@ -4,7 +4,6 @@ description: "Learn about the nuances of handling errors in a chain of Promises.
 pubDate: "2023-07-07"
 ---
 
-# Understanding error handling in Promise chains
 
 ## Promise chains
 

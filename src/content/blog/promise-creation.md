@@ -3,7 +3,6 @@ title: "Promise Tips: When do I need to create my own Promise instance?"
 description: "Most of the time, you won't need to create a new Promise by calling the constructor - though there are some situations where it might be needed."
 pubDate: "2022-01-28"
 ---
-# Promise Tips: When do I need to create my own Promise instance?
 
 Promises are pretty ubiquitous these days, but sometimes `Promise` based code is more complex that it needs to be.
 

@@ -3,7 +3,6 @@ title: "All about `this` in JavaScript"
 description: "The `this` keyword in JavaScript can sometimes be a source of confusion. Let's look at what value it has in various situations."
 pubDate: "2020-08-20"
 ---
-# All about `this` in JavaScript
 
 ## What is `this`?
 

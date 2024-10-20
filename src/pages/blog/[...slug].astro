@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -19,6 +20,12 @@ const { Content } = await post.render();
         <img src={post.data.image} class="rounded-md w-[720px]" />
         <small class="text-zinc-500">{post.data.imageCredit}</small>
     </div>
+    <header class="mb-4">
+        <h2 class="text-4xl font-bold">{post.data.title}</h2>
+        <div class="text-lg">
+            Posted by {post.data.author || 'Joe Attardi'} on <FormattedDate date={post.data.pubDate} />
+        </div>
+    </header>
     <div
         class:list={[
             'mx-auto',

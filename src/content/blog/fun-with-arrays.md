@@ -4,8 +4,6 @@ description: "In this article, we'll look at some weird quirks with JavaScript a
 pubDate: "2023-10-25"
 ---
 
-# Fun with arrays
-
 In this article, we'll look at some weird quirks with JavaScript arrays to learn a little more about how they work under the hood.
 
 An array is a collection or list of values. It could hold just strings:

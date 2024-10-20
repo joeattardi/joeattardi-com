@@ -5,7 +5,6 @@ image: '/blog/code-detective.jpg'
 imageCredit: 'Agence Olloweb/Unsplash'
 pubDate: '2024-10-03'
 ---
-# Using git bisect, the detective tool for debugging
 
 You’re working on a bug fix and find some bad code that causes a bug. The `git blame` command will tell you who the last developer was that modified that line, and when they modified it. But what if you don’t know what code introduced the bug? For these situations, the `git bisect` command can help.
 
