@@ -20,7 +20,12 @@ const { Content } = await post.render();
         <small class="text-zinc-500">{post.data.imageCredit}</small>
     </div>
     <div
-        class="mx-auto prose dark:prose-invert prose-h1:font-bold prose-h1:text-3xl prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl"
+        class:list={[
+            'mx-auto',
+            'prose-lg prose-h1:font-bold prose-h1:text-3xl prose-pre:w-full',
+            'prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl',
+            'dark:prose-invert'
+        ]}
     >
         <Content />
     </div>
