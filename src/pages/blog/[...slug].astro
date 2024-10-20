@@ -23,7 +23,9 @@ const { Content } = await post.render();
     <header class="mb-4">
         <h2 class="text-4xl font-bold">{post.data.title}</h2>
         <div class="text-lg">
-            Posted by {post.data.author || 'Joe Attardi'} on <FormattedDate date={post.data.pubDate} />
+            Posted by {post.data.author || 'Joe Attardi'} on <FormattedDate
+                date={post.data.pubDate}
+            />
         </div>
     </header>
     <div

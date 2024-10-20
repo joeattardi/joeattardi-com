@@ -1,7 +1,7 @@
 ---
-title: "Understanding color contrast for accessibility"
+title: 'Understanding color contrast for accessibility'
 description: "There are many aspects of accessibility that you need to keep in mind, one of which is color contrast. Proper color contrast not only looks good, but it's critical for users with low vision."
-pubDate: "2023-10-06"
+pubDate: '2023-10-06'
 ---
 
 Accessibility is a popular topic these days - as it should be. There are many benefits of making your application accessible - it promotes inclusivity by making your app usable by everyone.
@@ -19,11 +19,9 @@ The term "contrast ratio" refers to the difference, or ratio, in brightness betw
 The [WCAG guidelines](https://www.w3.org/TR/WCAG21/) formally define the [contrast ratio](https://www.w3.org/TR/WCAG21/#dfn-contrast-ratio) as:
 
 > (L1 + 0.05) / (L2 + 0.05), where
-> 
-> * L1 is the relative luminance of the lighter of the colors, and
->     
-> * L2 is the relative luminance of the darker of the colors.
->     
+>
+> -   L1 is the relative luminance of the lighter of the colors, and
+> -   L2 is the relative luminance of the darker of the colors.
 
 ## How much contrast is enough?
 
@@ -33,10 +31,8 @@ The contrast ratios required by WCAG differ slightly depending on the size of th
 
 Large text size is defined as follows:
 
-* For **bold** text, 14 points or larger
-    
-* For non-bold text, 18 points or larger
-    
+-   For **bold** text, 14 points or larger
+-   For non-bold text, 18 points or larger
 
 Large text has a more relaxed contrast requirement since larger text is easier to read. For large text, the minimum contrast ratio is 3:1. This minimum is known as Level AA.
 
@@ -56,10 +52,10 @@ Level AAA does not define a minimum contrast for non-text elements.
 
 The following table summarizes the different minimum contrast ratios:
 
-|  | **Large text** | **Normal text** | **Non-text** |
-| --- | --- | --- | --- |
-| **AA** | 3:1 | 4.5:1 | 3:1 |
-| **AAA** | 4.5:1 | 7:1 |  |
+|         | **Large text** | **Normal text** | **Non-text** |
+| ------- | -------------- | --------------- | ------------ |
+| **AA**  | 3:1            | 4.5:1           | 3:1          |
+| **AAA** | 4.5:1          | 7:1             |              |
 
 ## Checking contrast
 
@@ -91,6 +87,5 @@ Here are a few examples of different color contrast ratios. Screenshots are cour
 
 Using sufficient color contrast is good for everyone, but critical for accessibility. Of course, color alone is not enough to make an accessible experience. For other resources to make your UI accessible, check out:
 
-* [WCAG 2 Overview](https://www.w3.org/WAI/standards-guidelines/wcag/) \[w3.org\]
-    
-* [WebAIM](https://webaim.org/) \[webaim.org\]
+-   [WCAG 2 Overview](https://www.w3.org/WAI/standards-guidelines/wcag/) \[w3.org\]
+-   [WebAIM](https://webaim.org/) \[webaim.org\]

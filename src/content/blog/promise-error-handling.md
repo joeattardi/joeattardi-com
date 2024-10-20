@@ -1,9 +1,8 @@
 ---
-title: "Understanding error handling in Promise chains"
-description: "Learn about the nuances of handling errors in a chain of Promises."
-pubDate: "2023-07-07"
+title: 'Understanding error handling in Promise chains'
+description: 'Learn about the nuances of handling errors in a chain of Promises.'
+pubDate: '2023-07-07'
 ---
-
 
 ## Promise chains
 
@@ -11,13 +10,15 @@ You can create a chain of `Promise`s by returning new `Promise`s from a `then` h
 
 ```javascript
 Promise.resolve(1)
-    .then(id => {
+    .then((id) => {
         console.log(`Success: ${id}`);
         return Promise.resolve(2);
-    }).then(id => {
+    })
+    .then((id) => {
         console.log(`Success: ${id}`);
         return Promise.resolve(3);
-    }).then(id => {
+    })
+    .then((id) => {
         console.log(`Success: ${id}. Done!`);
     });
 ```
@@ -34,15 +35,18 @@ To handle any errors that may occur in the chain, you can add a call to `catch` 
 
 ```javascript
 Promise.resolve(1)
-    .then(id => {
+    .then((id) => {
         console.log(`Success: ${id}`);
         return Promise.reject(2);
-    }).then(id => {
+    })
+    .then((id) => {
         console.log(`Success: ${id}`);
         return Promise.resolve(3);
-    }).then(id => {
+    })
+    .then((id) => {
         console.log(`Success: ${id}. Done!`);
-    }).catch(id => {
+    })
+    .catch((id) => {
         console.log(`Error: ${id}`);
     });
 ```
@@ -60,17 +64,21 @@ If you add more `then` calls after the `catch`, they will run!
 
 ```javascript
 Promise.resolve(1)
-    .then(id => {
+    .then((id) => {
         console.log(`Success: ${id}`);
         return Promise.reject(2);
-    }).then(id => {
+    })
+    .then((id) => {
         console.log(`Success: ${id}`);
         return Promise.resolve(3);
-    }).then(id => {
+    })
+    .then((id) => {
         console.log(`Success: ${id}. Done!`);
-    }).catch(id => {
+    })
+    .catch((id) => {
         console.log(`Error: ${id}`);
-    }).then(() => {
+    })
+    .then(() => {
         console.log('Another then!');
     });
 ```
@@ -87,17 +95,21 @@ Why does the chain continue after the `catch`? As it turns out, you can return a
 
 ```javascript
 Promise.resolve(1)
-    .then(id => {
+    .then((id) => {
         console.log(`Success: ${id}`);
         return Promise.reject(2);
-    }).then(id => {
+    })
+    .then((id) => {
         console.log(`Success: ${id}`);
         return Promise.resolve(3);
-    }).then(id => {
+    })
+    .then((id) => {
         console.log(`Success: ${id}. Done!`);
-    }).catch(id => {
+    })
+    .catch((id) => {
         console.log(`Error: ${id}`);
-    }).then(id => {
+    })
+    .then((id) => {
         console.log(`Success: ${id}`);
     });
 ```
@@ -117,8 +129,8 @@ This is a contrived scenario, but consider a function that does some asynchronou
 ```javascript
 function getJSON(url) {
     return fetch(url)
-        .then(response => response.json())
-        .catch(error => console.log('Fetch error:', error));
+        .then((response) => response.json())
+        .catch((error) => console.log('Fetch error:', error));
 }
 ```
 
@@ -126,23 +138,23 @@ What happens if there's an error with the Fetch call? Before reading this post, 
 
 ```javascript
 getJSON('http://invalid.fake')
-    .then(data => console.log('Success!', data))
+    .then((data) => console.log('Success!', data))
     .catch(() => console.log('Error!'));
 ```
 
-Logically you might expect that `Error!` will be printed. But what actually happens is that `getJSON` logs the Fetch error but returns a *fulfilled* `Promise`. Your `then` handler will be executed and print:
+Logically you might expect that `Error!` will be printed. But what actually happens is that `getJSON` logs the Fetch error but returns a _fulfilled_ `Promise`. Your `then` handler will be executed and print:
 
 ```plaintext
 Success! undefined
 ```
 
-In order to get the result you want, the `catch` handler inside `getJSON` has to return a *rejected* `Promise`. You have to "re-reject" it:
+In order to get the result you want, the `catch` handler inside `getJSON` has to return a _rejected_ `Promise`. You have to "re-reject" it:
 
 ```javascript
 function getJSON(url) {
     return fetch(url)
-        .then(response => response.json())
-        .catch(error => {
+        .then((response) => response.json())
+        .catch((error) => {
             console.log('Fetch error:', error);
             return Promise.reject(error);
         });
@@ -154,8 +166,8 @@ You could also `throw` the error, which will implicitly return a rejected `Promi
 ```javascript
 function getJSON(url) {
     return fetch(url)
-        .then(response => response.json())
-        .catch(error => {
+        .then((response) => response.json())
+        .catch((error) => {
             console.log('Fetch error:', error);
             throw error;
         });

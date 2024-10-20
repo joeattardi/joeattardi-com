@@ -1,7 +1,7 @@
 ---
-title: "Promise Tips: When do I need to create my own Promise instance?"
+title: 'Promise Tips: When do I need to create my own Promise instance?'
 description: "Most of the time, you won't need to create a new Promise by calling the constructor - though there are some situations where it might be needed."
-pubDate: "2022-01-28"
+pubDate: '2022-01-28'
 ---
 
 Promises are pretty ubiquitous these days, but sometimes `Promise` based code is more complex that it needs to be.
@@ -19,7 +19,7 @@ function getUserDetails(userId) {
 }
 ```
 
-This function returns a `Promise` that will be resolved when the fetch call is complete and the JSON response is received. 
+This function returns a `Promise` that will be resolved when the fetch call is complete and the JSON response is received.
 
 We make the `fetch` call and extract the JSON in the first `then` handler. `response.json()` also returns a `Promise`, so we call `then` on that too. Once we have the JSON result, we can resolve our returned `Promise`.
 
@@ -30,21 +30,22 @@ Here's a somewhat rough analogy, but bear with me here. Suppose you want to buy 
 Client code that calls `getUserDetails` looks like this:
 
 ```javascript
-getUserDetails(userId).then(details => {
-  doSomethingWith(details);
+getUserDetails(userId).then((details) => {
+    doSomethingWith(details);
 });
 ```
 
 We are calling `then` on the outer `Promise` that was returned from `getUserDetails`.
 
-We can do better! If the asynchronous thing you are doing already returns a `Promise`, as `fetch` does, you *don't need to wrap it in your own `Promise`*.
+We can do better! If the asynchronous thing you are doing already returns a `Promise`, as `fetch` does, you _don't need to wrap it in your own `Promise`_.
 
 The above function can be written much more simply:
 
 ```javascript
 function getUserDetails(userId) {
-  return fetch(`/users/${userId}/details`)
-    .then(response => response.json());
+    return fetch(`/users/${userId}/details`).then((response) =>
+        response.json()
+    );
 }
 ```
 
@@ -60,23 +61,23 @@ There are some cases where rolling your own `Promise` is unavoidable, for exampl
 
 ## Event based APIs
 
-Let's make a quick and dirty image loader! This function will take an image URL and return an `img` element, but *not until the image has loaded*. 
+Let's make a quick and dirty image loader! This function will take an image URL and return an `img` element, but _not until the image has loaded_.
 
 ```javascript
 function loadImage(url) {
-  return new Promise((resolve, reject) => {
-    const image = document.createElement('img');
+    return new Promise((resolve, reject) => {
+        const image = document.createElement('img');
 
-    image.addEventListener('load', () => {
-      resolve(image);
+        image.addEventListener('load', () => {
+            resolve(image);
+        });
+
+        image.addEventListener('error', (error) => {
+            reject(error);
+        });
+
+        image.src = url;
     });
-
-    image.addEventListener('error', error => {
-      reject(error);
-    });
-
-    image.src = url;
-  });
 }
 ```
 
@@ -85,7 +86,7 @@ Because the image element doesn't provide a `Promise` itself, in this case we ha
 This is easy to use:
 
 ```javascript
-loadImage('/logo.png').then(image => container.appendChild(image));
+loadImage('/logo.png').then((image) => container.appendChild(image));
 ```
 
 ## Callback based APIs
@@ -95,20 +96,28 @@ Some older APIs are still callback based. You might want to make a "promisified"
 Consider this simplified example of an API. It follows the typical Node.js callback pattern - it takes two callback function arguments. The first will be called if there is an error, and the second will be called on success. We use such an API like this:
 
 ```javascript
-db.findItem(123, error => {
-  console.log('oops, an error:', error);
-}, data => {
-  console.log('got data:', data);
-});
+db.findItem(
+    123,
+    (error) => {
+        console.log('oops, an error:', error);
+    },
+    (data) => {
+        console.log('got data:', data);
+    }
+);
 ```
 
 Callbacks can be a little painful to work with, so we can wrap this API with a `Promise`:
 
 ```javascript
 function findItemPromise(recordId) {
-  return new Promise((resolve, reject) => {
-    db.findItem(recordId, error => reject(error), data => resolve(data));
-  });
+    return new Promise((resolve, reject) => {
+        db.findItem(
+            recordId,
+            (error) => reject(error),
+            (data) => resolve(data)
+        );
+    });
 }
 ```
 
@@ -117,7 +126,7 @@ This can actually be simplified a bit more. Since the `resolve` and `reject` han
 ```javascript
 function findItemPromise(recordId) {
     return new Promise((resolve, reject) => {
-      db.findItem(recordId, reject, resolve);
+        db.findItem(recordId, reject, resolve);
     });
 }
 ```
@@ -126,15 +135,14 @@ Now we can use the `findItemPromise` API:
 
 ```javascript
 findItemPromise(recordId)
-  .then(data => console.log('got data:', data))
-  .catch(error => console.log('oops, an error:', error));
+    .then((data) => console.log('got data:', data))
+    .catch((error) => console.log('oops, an error:', error));
 ```
 
 In fact, if you are working with Node.js, you don't need to do this wrapping yourself. The Node.js API includes a [`promisify`](https://nodejs.org/dist/latest-v8.x/docs/api/util.html#util_util_promisify_original) utility function that does exactly this!
 
 # Summary
 
-- If the async API you are working with already returns a `Promise`, you most likely don't need to wrap it in your own new `Promise`. Instead, you can just utilize the existing `Promise`.
-- For event and callback based APIs, you will need to create your own `Promise` which wraps the API call, and calls the `resolve` and `reject` handlers accordingly.
-- Node.js has a `promisify` utility function that will convert any callback-based function (that follows the Node convention of (error, success) callbacks) into a `Promise` based one.
-
+-   If the async API you are working with already returns a `Promise`, you most likely don't need to wrap it in your own new `Promise`. Instead, you can just utilize the existing `Promise`.
+-   For event and callback based APIs, you will need to create your own `Promise` which wraps the API call, and calls the `resolve` and `reject` handlers accordingly.
+-   Node.js has a `promisify` utility function that will convert any callback-based function (that follows the Node convention of (error, success) callbacks) into a `Promise` based one.

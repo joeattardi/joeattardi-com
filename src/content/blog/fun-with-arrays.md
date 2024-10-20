@@ -1,7 +1,7 @@
 ---
-title: "Fun with arrays"
+title: 'Fun with arrays'
 description: "In this article, we'll look at some weird quirks with JavaScript arrays to learn a little more about how they work under the hood."
-pubDate: "2023-10-25"
+pubDate: '2023-10-25'
 ---
 
 In this article, we'll look at some weird quirks with JavaScript arrays to learn a little more about how they work under the hood.
@@ -53,7 +53,7 @@ names[12.5] = 'Bob';
 console.log(names.length);
 ```
 
-What do you think will be printed now? If you guessed `11` again, you're correct. By now you can see that the `length` of an array actually does not indicate the *number of values* in the array.
+What do you think will be printed now? If you guessed `11` again, you're correct. By now you can see that the `length` of an array actually does not indicate the _number of values_ in the array.
 
 If you check the value at `names[12.5]`, you'll see that Bob is, in fact, there:
 
@@ -73,16 +73,16 @@ That explains why, in the second example, setting `names[12.5]` to `Bob` did not
 
 ## Array-like objects
 
-JavaScript has a notion of *array-like objects*. These are objects that have properties indexed like an array, but aren't actually arrays. Array-like objects also have a `length` property.
+JavaScript has a notion of _array-like objects_. These are objects that have properties indexed like an array, but aren't actually arrays. Array-like objects also have a `length` property.
 
 Here's a contrived example of an array-like object:
 
 ```javascript
 const names = {
-	0: 'Joe',
-	1: 'Bob',
-	2: 'Bill',
-	length: 3 // don't forget the length!
+    0: 'Joe',
+    1: 'Bob',
+    2: 'Bill',
+    length: 3 // don't forget the length!
 };
 ```
 
@@ -90,7 +90,7 @@ You can use an array-like object in a `for` loop:
 
 ```javascript
 for (let i = 0; i < names.length; i++) {
-  console.log(names[i]);
+    console.log(names[i]);
 }
 ```
 
@@ -112,7 +112,7 @@ You could use `find` on a `NodeList` to search for a node that meets a certain c
 
 ## The incredible shrinking array
 
-I'll leave you with one last array trick. Did you know that you can change an array's *length* property? That's right, the property is writable.
+I'll leave you with one last array trick. Did you know that you can change an array's _length_ property? That's right, the property is writable.
 
 If you set the `length` to a smaller value, any remaining elements are removed from the array:
 

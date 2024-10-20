@@ -1,7 +1,7 @@
 ---
-title: "All about `this` in JavaScript"
+title: 'All about `this` in JavaScript'
 description: "The `this` keyword in JavaScript can sometimes be a source of confusion. Let's look at what value it has in various situations."
-pubDate: "2020-08-20"
+pubDate: '2020-08-20'
 ---
 
 ## What is `this`?
@@ -26,10 +26,10 @@ Suppose we have the following object:
 
 ```javascript
 const joe = {
-  name: 'Joe',
-  sayHello() {
-    console.log(`Hello, I'm ${this.name}`);
-  }
+    name: 'Joe',
+    sayHello() {
+        console.log(`Hello, I'm ${this.name}`);
+    }
 };
 ```
 
@@ -41,7 +41,7 @@ joe.sayHello(); // prints 'Hello, I'm Joe'
 
 Then `this` inside the `sayHello` function refers to the `joe` object.
 
-When you call a function on an object using dot notation like we have done above, you could say that `this` refers to the object before the dot. This is sometimes called the *receiver*.
+When you call a function on an object using dot notation like we have done above, you could say that `this` refers to the object before the dot. This is sometimes called the _receiver_.
 
 If, however, we save a reference to the `sayHello` function and call it via the reference, we receive a different result:
 
@@ -58,10 +58,10 @@ If some other code already set a `name` property on the `window` object, it will
 name = 'Bob';
 
 const joe = {
-  name: 'Joe',
-  sayHello() {
-    console.log(`Hello, I'm ${this.name}`);
-  }
+    name: 'Joe',
+    sayHello() {
+        console.log(`Hello, I'm ${this.name}`);
+    }
 };
 
 joe.sayHello(); // prints "Hello, I'm Joe"
@@ -70,8 +70,8 @@ const greet = joe.sayHello;
 greet(); // prints "Hello, I'm Bob"
 
 const ben = {
-  name: 'Ben',
-  sayHello: joe.sayHello
+    name: 'Ben',
+    sayHello: joe.sayHello
 };
 ben.sayHello(); // prints "Hello, I'm Ben"
 ```
@@ -81,9 +81,11 @@ ben.sayHello(); // prints "Hello, I'm Ben"
 Another common scenario is an event listener. When an event listener is added, a callback function is specified to handle the event. When this callback is called, `this` refers to the object that the event listener was added to.
 
 ```javascript
-document.querySelector('button.myButton').addEventListener('click', function() {
-  this.style.background = 'red';
-});
+document
+    .querySelector('button.myButton')
+    .addEventListener('click', function () {
+        this.style.background = 'red';
+    });
 ```
 
 Here we added a `click` listener to a button. When the button is clicked and the callback function is executed, `this` refers to the button.
@@ -96,8 +98,8 @@ Inside the callback passed to these functions, `this` refers again to the global
 
 ```javascript
 const arr = [1, 2, 3];
-arr.forEach(function(item) {
-  console.log(this);
+arr.forEach(function (item) {
+    console.log(this);
 });
 ```
 
@@ -106,15 +108,15 @@ When the above code is run in a browser, it will print the `window` object to th
 Consider the following code:
 
 ```javascript
-name = 'Bob'; 
+name = 'Bob';
 
 const joe = {
-  name: 'Joe',
-  greet(people) {
-    people.forEach(function(person) {
-      console.log(`Hello ${person}, I'm ${this.name}`);
-    });
-  }
+    name: 'Joe',
+    greet(people) {
+        people.forEach(function (person) {
+            console.log(`Hello ${person}, I'm ${this.name}`);
+        });
+    }
 };
 
 joe.greet(['Liz', 'Ben']);
@@ -137,13 +139,13 @@ One way is to save a reference to `this` and reference that from inside the call
 name = 'Bob';
 
 const joe = {
-  name: 'Joe',
-  greet(people) {
-		const self = this;
-		people.forEach(function(person) {
-		  console.log(`Hello ${person}, I'm ${self.name}`);
-	  });
-  }
+    name: 'Joe',
+    greet(people) {
+        const self = this;
+        people.forEach(function (person) {
+            console.log(`Hello ${person}, I'm ${self.name}`);
+        });
+    }
 };
 
 joe.greet(['Liz', 'Ben']);
@@ -172,10 +174,12 @@ An arrow function does not get its own `this`; rather, it inherits the `this` of
 name = 'Bob';
 
 const joe = {
-	name: 'Joe',
-	greet(people) {
-		people.forEach(person => console.log(`Hello ${person}, I'm ${this.name}`));
-	}
+    name: 'Joe',
+    greet(people) {
+        people.forEach((person) =>
+            console.log(`Hello ${person}, I'm ${this.name}`)
+        );
+    }
 };
 
 joe.greet(['Liz', 'Ben']);
@@ -196,11 +200,11 @@ There are several handy functions on the prototype of `Function`. One of these i
 
 ```javascript
 const joe = {
-  name: 'Joe',
-  sayHello() {
-    console.log(`Hello, I'm ${this.name}`);
-  }
-}
+    name: 'Joe',
+    sayHello() {
+        console.log(`Hello, I'm ${this.name}`);
+    }
+};
 
 const greet = joe.sayHello;
 greet();
@@ -210,17 +214,17 @@ As we have already seen, the above code will not print `Hello, I'm Joe` because 
 
 ```javascript
 const joe = {
-  name: 'Joe',
-  sayHello() {
-    console.log(`Hello, I'm ${this.name}`);
-	}
-}
+    name: 'Joe',
+    sayHello() {
+        console.log(`Hello, I'm ${this.name}`);
+    }
+};
 
 const greet = joe.sayHello.bind(joe);
 greet(); // prints "Hello, I'm Joe"
 ```
 
-Here's what `bind` does: Calling `bind` on a function like we did above returns a *new function* whose `this` value is bound to the first argument passed to `bind`.
+Here's what `bind` does: Calling `bind` on a function like we did above returns a _new function_ whose `this` value is bound to the first argument passed to `bind`.
 
 `joe.sayHello` is a reference to the `sayHello` function. We then call `bind(joe)` on that function, which returns a new function where `this` is bound to the `joe` object. So our code works as intended.
 
@@ -232,11 +236,11 @@ Two other useful functions on the `Function` prototype are `call` and `apply`. T
 
 ```javascript
 const joe = {
-  name: 'Joe',
-  greet(person) {
-    console.log(`Hello ${person}, I'm ${this.name}`);
-	}
-}
+    name: 'Joe',
+    greet(person) {
+        console.log(`Hello ${person}, I'm ${this.name}`);
+    }
+};
 
 const greet = joe.greet;
 
@@ -250,7 +254,7 @@ As you can see, `call` and `apply` both accomplish what we want. But you might n
 
 First, what do they have in common? `call` and `apply` both invoke a function with the first argument bound as the `this` value. So in the above example, when we call `call` and `apply` on the function, the `joe` object is bound to `this`.
 
-This is similar to `bind` as shown above, but with one key difference. `bind` returns a *new* function that will always have the specified `this` value for every invocation. In contrast, `call` and `apply` operate on the original function, and their effects apply only to that single invocation.
+This is similar to `bind` as shown above, but with one key difference. `bind` returns a _new_ function that will always have the specified `this` value for every invocation. In contrast, `call` and `apply` operate on the original function, and their effects apply only to that single invocation.
 
 Now, back to `call` and `apply`. What is the difference? The difference is how we specify the arguments to the function call. `Function.prototype.call` takes a variable number of arguments. Each of these arguments are passed, in order, as arguments to the original function.
 
@@ -268,13 +272,13 @@ There are yet other ways to affect the value of `this` in a function call. One e
 
 ```javascript
 const joe = {
-  name: 'Joe',
-  greet(people) {
-    people.forEach(function(person) {
-      console.log(`Hello ${person}, I'm ${this.name}`);
-    }, this);
-  }
-}
+    name: 'Joe',
+    greet(people) {
+        people.forEach(function (person) {
+            console.log(`Hello ${person}, I'm ${this.name}`);
+        }, this);
+    }
+};
 
 joe.greet(['Liz', 'Ben']);
 ```

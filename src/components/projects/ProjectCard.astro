@@ -11,7 +11,10 @@ const { name, url } = Astro.props;
     <div class="text-lg flex flex-col gap-4">
         <slot />
     </div>
-    <a href={url} class="mt-4 flex items-center gap-2 text-blue-800 dark:text-blue-400">
+    <a
+        href={url}
+        class="mt-4 flex items-center gap-2 text-blue-800 dark:text-blue-400"
+    >
         Project details
         <Icon name="ph:arrow-right" />
     </a>

@@ -5,12 +5,12 @@ image: '/blog/college-degree.jpg'
 imageCredit: 'Charles DeLoye/Unsplash'
 pubDate: 'Oct 13 2023'
 ---
+
 I took a more traditional path into tech, going to a 4-year university and getting a Computer Science degree (way back in 2004!). These days, it's no secret that there are many alternate paths to a software development job. The three main paths today are:
 
 1. Traditional CS education
 2. Bootcamp
 3. Completely self-taught
-    
 
 I have seen people become very successful taking any of these 3 paths. It's clear that a CS degree is no longer necessary to get a good tech job. Does that mean they're no longer worth it?
 
@@ -32,20 +32,19 @@ I have also worked with talented engineers who started with a bootcamp and are s
 
 ## The most critical skill
 
-Whatever path you choose for your adventure, the most critical skill to learn is *how to learn effectively*. This isn't the same for everyone - what helps me learn effectively may differ from what works for you.
+Whatever path you choose for your adventure, the most critical skill to learn is _how to learn effectively_. This isn't the same for everyone - what helps me learn effectively may differ from what works for you.
 
-The other important things to consider are *what* to learn and *why*. Don't just learn programming languages for the sake of learning more. Over the past 20 years, I have learned:
+The other important things to consider are _what_ to learn and _why_. Don't just learn programming languages for the sake of learning more. Over the past 20 years, I have learned:
 
-* Python
-* Ruby
-* PHP 
-* C
-* C++
-* Elixir
-* Java
-* JavaScript
-* TypeScript
-    
+-   Python
+-   Ruby
+-   PHP
+-   C
+-   C++
+-   Elixir
+-   Java
+-   JavaScript
+-   TypeScript
 
 Of those, I only really know the last three today. I learned those other languages for the sake of learning them, thinking it would help me get ahead. But if you don't have a good reason for learning something, you won't use that knowledge and like an old cache entry, you'll lose it.
 

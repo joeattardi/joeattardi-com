@@ -13,7 +13,8 @@ const isActive = href === pathname || href === '/' + subpath?.[0];
             'text-xl p-2',
             {
                 'sm:font-bold sm:border-b-4 sm:border-b-blue-700': isActive,
-                'hover:border-b-4 hover:border-b-blue-200 dark:hover:border-b-blue-900': !isActive
+                'hover:border-b-4 hover:border-b-blue-200 dark:hover:border-b-blue-900':
+                    !isActive
             }
         ]}
         href={href}
