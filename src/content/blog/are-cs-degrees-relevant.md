@@ -10,9 +10,7 @@ pubDate: 'Oct 13 2023'
 I took a more traditional path into tech, going to a 4-year university and getting a Computer Science degree (way back in 2004!). These days, it's no secret that there are many alternate paths to a software development job. The three main paths today are:
 
 1. Traditional CS education
-    
 2. Bootcamp
-    
 3. Completely self-taught
     
 
@@ -41,21 +39,13 @@ Whatever path you choose for your adventure, the most critical skill to learn is
 The other important things to consider are *what* to learn and *why*. Don't just learn programming languages for the sake of learning more. Over the past 20 years, I have learned:
 
 * Python
-    
 * Ruby
-    
-* PHP
-    
+* PHP 
 * C
-    
 * C++
-    
 * Elixir
-    
 * Java
-    
 * JavaScript
-    
 * TypeScript
     
 
