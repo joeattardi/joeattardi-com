@@ -1,5 +1,11 @@
 ---
+import { getCollection } from 'astro:content';
+import { Icon } from 'astro-icon/components';
 import MainLayout from '../layouts/MainLayout.astro';
+
+const posts = (await getCollection('blog')).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+).slice(0, 3);
 ---
 
 <MainLayout>
@@ -18,7 +24,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                 interfaces. I also write articles and books on web development
                 to share knowledge with the tech community.
             </p>
-            <h2 class="text-4xl">Want to get in touch?</h2>
+            <h2 class="text-2xl">Want to get in touch?</h2>
             <p class="text-xl">
                 Reach out on <a
                     class="underline"
@@ -26,10 +32,21 @@ import MainLayout from '../layouts/MainLayout.astro';
                 > or <a
                     class="underline"
                     href="https://linkedin.com/in/JoeAttardi">LinkedIn</a
-                >, or shoot me an email at <a class="underline" href="mailto:jattardi@gmail.com"
-                    >jattardi@gmail.com</a
+                >, or shoot me an email at <a
+                    class="underline"
+                    href="mailto:jattardi@gmail.com">jattardi@gmail.com</a
                 >. Hope to hear from you!
             </p>
+            <div class="flex flex-col gap-4">
+                <h3 class="text-4xl">Latest blog posts</h3>
+                {posts.map(post => (
+                    <article>
+                        <h4 class="text-xl"><a href={`/blog/${post.slug}`}>{post.data.title}</a></h4>
+                        <p>{post.data.description}</p>
+                        <a href={`/blog/${post.slug}`} class="text-blue-600 flex items-center gap-1">Read more <Icon name="ph:arrow-right" /></a>
+                    </article>
+                ))}
+            </div>
         </div>
         <img
             src="/joe.jpg"
