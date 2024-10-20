@@ -11,7 +11,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Atkinson Hyperlegible', ...defaultTheme.fontFamily.sans]
+                sans: ['Lato', ...defaultTheme.fontFamily.sans]
             }
         }
     },

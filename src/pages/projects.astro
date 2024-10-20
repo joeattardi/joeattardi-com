@@ -3,11 +3,13 @@ import { Image } from 'astro:assets';
 import MainLayout from '../layouts/MainLayout.astro';
 import ProjectCard from '../components/projects/ProjectCard.astro';
 import webApiDemoImage from '../images/projects/web-api-demos.png';
+import jsonColorizerImage from '../images/projects/json-colorizer.png';
+import picmoImage from '../images/projects/picmo.png';
 ---
 
 <MainLayout title="Projects">
     <h2 class="text-4xl">Projects</h2>
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-4 mt-4">
         <ProjectCard name="Web API Demos" url="https://webapis.info/examples">
             <div class="flex items-start">
                 <p class="flex-grow">
@@ -16,8 +18,8 @@ import webApiDemoImage from '../images/projects/web-api-demos.png';
                     >. Covers web animations, speech recognition, DOM observers,
                     and more.
                 </p>
-                <Image src={webApiDemoImage} class="w-64" alt="Web API Demos" />
             </div>
+            <Image src={webApiDemoImage} class="hidden sm:block w-64" alt="Web API Demos" />
         </ProjectCard>
 
         <ProjectCard
@@ -28,6 +30,7 @@ import webApiDemoImage from '../images/projects/web-api-demos.png';
                 An npm package to pretty-print JSON data with syntax
                 highlighting.
             </p>
+            <Image src={jsonColorizerImage} class="hidden sm:block w-64" alt="Web API Demos" />
         </ProjectCard>
         <ProjectCard
             name="promise-poller"
@@ -43,6 +46,8 @@ import webApiDemoImage from '../images/projects/web-api-demos.png';
                 A vanilla JavaScript emoji picker component. No longer
                 maintained.
             </p>
+            <Image src={picmoImage} class="hidden sm:block w-64" alt="Web API Demos" />
+            
         </ProjectCard>
         <ProjectCard
             name="Build a Toast Notification System With Svelte"
