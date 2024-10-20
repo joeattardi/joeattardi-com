@@ -1,0 +1,10 @@
+---
+const { href } = Astro.props;
+---
+
+<a
+    class="flex items-center gap-2 bg-stone-200 dark:bg-stone-800 p-4 rounded"
+    href={href}
+>
+    <slot />
+</a>

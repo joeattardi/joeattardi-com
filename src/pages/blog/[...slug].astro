@@ -1,0 +1,27 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+    const posts = await getCollection('blog');
+    return posts.map((post) => ({
+        params: { slug: post.slug },
+        props: post
+    }));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<MainLayout title={post.data.title}>
+    <div class="grid grid-cols-[auto] justify-center mb-4">
+        <img src={post.data.image} class="rounded-md w-[720px]" />
+        <small class="text-zinc-500">{post.data.imageCredit}</small>
+    </div>
+    <div
+        class="mx-auto prose dark:prose-invert prose-h1:font-bold prose-h1:text-3xl prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl"
+    >
+        <Content />
+    </div>
+</MainLayout>
