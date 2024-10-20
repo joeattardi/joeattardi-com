@@ -9,7 +9,7 @@ const { title, subtitle, cover, href, published, description } = Astro.props;
 >
     <a class="flex w-48 sm:w-64" href={href}>
         <Image
-            class="hover:-rotate-2 hover:scale-105 transition-transform"
+            class="hover:-rotate-2 hover:scale-105 transition-transform dark:border dark:border-slate-700"
             src={cover}
             alt={title}
         />
