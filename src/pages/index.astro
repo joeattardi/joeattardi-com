@@ -42,7 +42,7 @@ const posts = (await getCollection('blog'))
                 {
                     posts.map((post) => (
                         <article>
-                            <h4 class="text-xl">
+                            <h4 class="text-xl font-bold">
                                 <a href={`/blog/${post.slug}`}>
                                     {post.data.title}
                                 </a>
