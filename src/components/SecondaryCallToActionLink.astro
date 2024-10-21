@@ -1,0 +1,12 @@
+---
+import { Icon } from 'astro-icon/components';
+const { href, icon } = Astro.props;
+---
+
+<a
+    class="border border-orange-600 dark:border-orange-400 hover:bg-orange-100 dark:hover:bg-orange-950 px-4 py-2 rounded flex items-center gap-2 text-orange-600 dark:text-orange-400 text-xl"
+    href={href}
+>
+    {icon ? <Icon name={icon} /> : null}
+    <slot />
+</a>

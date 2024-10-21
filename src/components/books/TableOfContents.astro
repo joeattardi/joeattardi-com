@@ -1,0 +1,21 @@
+---
+const { contents } = Astro.props;
+
+type ContentsItem = {
+    name: string;
+    description?: string;
+}
+---
+<div class="w-full max-w-7xl mx-auto flex flex-col gap-4">
+    <h3 class="text-4xl">Contents</h3>
+    <ol class="list-decimal ml-8 flex flex-col gap-2">
+        {
+            contents.map((item: ContentsItem) => (
+                <li>
+                    <div class="text-xl">{item.name}</div>
+                    <div>{item.description}</div>
+                </li>
+            ))
+        }
+    </ol>
+</div>
