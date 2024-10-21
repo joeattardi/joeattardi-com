@@ -50,7 +50,7 @@ const posts = (await getCollection('blog'))
                             <p>{post.data.description}</p>
                             <a
                                 href={`/blog/${post.slug}`}
-                                class="text-blue-600 flex items-center gap-1"
+                                class="text-blue-600 dark:text-blue-400 flex items-center gap-1"
                             >
                                 Read more <Icon name="ph:arrow-right" />
                             </a>
@@ -61,7 +61,7 @@ const posts = (await getCollection('blog'))
         </div>
         <img
             src="/joe.jpg"
-            class="self-start rounded-full w-1/2 sm:w-72 border-8 border-transparent dark:border-slate-600"
+            class="sm:self-start rounded-full w-1/2 sm:w-72 border-8 border-transparent dark:border-slate-600"
         />
     </div>
 </MainLayout>
