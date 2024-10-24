@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import FullWidthLayout from '../../../layouts/FullWidthLayout.astro';
 import SecondaryPurchaseLink from '../../../components/books/SecondaryPurchaseLink.astro';
+import Testimonial from '../../../components/books/Testimonial.astro';
 import TableOfContents from '../../../components/books/TableOfContents.astro';
 import PrimaryCallToActionLink from '../../../components/PrimaryCallToActionLink.astro';
 import SecondaryCallToActionLink from '../../../components/SecondaryCallToActionLink.astro';
@@ -125,6 +126,27 @@ import contents from './_contents.json';
                         </li>
                     </ul>
                 </div>
+            </div>
+
+            <div
+                class="w-full max-w-7xl mx-auto p-8 grid grid-cols-1 sm:grid-cols-2 gap-12 justify-center items-start"
+            >
+                <Testimonial
+                    name="Sarah Shook"
+                    title="Software developer/owner, Shook LLC"
+                >
+                    <em class="italic">Web API Cookbook</em> covers a wide range
+                    of browser-based APIs and provides valuable examples for all
+                    skill levels. Plus, Joe's writing style and thoughtful explanations
+                    make the learning enjoyable. This is a must-read for web developers!
+                </Testimonial>
+                <Testimonial
+                    name="Bret Little"
+                    title="Staff Software Engineer, Shopify"
+                >
+                    This book offered fresh insights and introduced me to APIs I
+                    never knew existed.
+                </Testimonial>
             </div>
 
             <TableOfContents contents={contents} />
