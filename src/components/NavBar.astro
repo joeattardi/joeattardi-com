@@ -7,8 +7,8 @@ import NavLink from './NavLink.astro';
         role="menubar"
         id="top-nav"
         class:list={[
-            'bg-slate-200 dark:bg-slate-800 dark:border-slate-700 border border-slate-300 w-1/2 p-4 fixed right-0 top-20 m-4 hidden rounded',
-            'md:border-none md:bg-transparent md:dark:bg-transparent md:w-auto md:relative md:flex md:top-0 md:items-center md:gap-4 md:p-0 md:m-0'
+            'bg-slate-200 dark:bg-slate-800 dark:border-slate-700 border border-slate-300 w-2/3 p-4 fixed right-0 top-0 z-10 hidden h-full rounded py-16',
+            'md:border-none md:bg-transparent md:dark:bg-transparent md:w-auto md:relative md:flex md:top-0 md:h-auto md:items-center md:gap-4 md:p-0 md:m-0'
         ]}
     >
         <NavLink href="/books">Books</NavLink>
@@ -21,7 +21,7 @@ import NavLink from './NavLink.astro';
 <style>
     @keyframes open {
         from {
-            transform: translateX(16px);
+            transform: translateX(100%);
             opacity: 0;
         }
 
@@ -36,6 +36,6 @@ import NavLink from './NavLink.astro';
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 16px;
+        gap: 32px;
     }
 </style>

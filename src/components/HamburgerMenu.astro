@@ -1,8 +1,8 @@
-<div class="hamburger md:hidden flex">
+<button popovertarget="navbar" class="hamburger md:hidden flex">
     <div class="bg-black dark:bg-white"></div>
     <div class="bg-black dark:bg-white"></div>
     <div class="bg-black dark:bg-white"></div>
-</div>
+</button>
 
 <script>
     async function onMenuClick() {
@@ -15,7 +15,7 @@
             await nav.animate(
                 [
                     { opacity: 1, transform: 'translateX(0)' },
-                    { opacity: 0, transform: 'translateX(16px)' }
+                    { opacity: 0, transform: 'translateX(100%)' }
                 ],
                 {
                     duration: 200,
