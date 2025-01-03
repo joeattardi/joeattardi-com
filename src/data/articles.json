@@ -1,5 +1,12 @@
 [
     {
+        "title": "Working with URLs in JavaScript",
+        "date": "2024-12-19",
+        "source": "LogRocket",
+        "url": "https://blog.logrocket.com/working-urls-javascript/",
+        "description": "Break down the parts of a URL and explore APIs for working with them in JavaScript, parsing them, building query strings, checking their validity, etc."
+    },
+    {
         "title": "How to Build Your First Web Component",
         "date": "2023-10-19",
         "source": "freeCodeCamp",
