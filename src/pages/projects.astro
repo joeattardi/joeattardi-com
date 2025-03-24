@@ -5,6 +5,8 @@ import ProjectCard from '../components/projects/ProjectCard.astro';
 import webApiDemoImage from '../images/projects/web-api-demos.png';
 import jsonColorizerImage from '../images/projects/json-colorizer.png';
 import picmoImage from '../images/projects/picmo.png';
+import svelteToastImage from '../images/projects/svelte-toast.png';
+import urlScrubImage from '../images/projects/urlscrub.png';
 ---
 
 <MainLayout title="Projects">
@@ -25,7 +27,18 @@ import picmoImage from '../images/projects/picmo.png';
                 alt="Web API Demos"
             />
         </ProjectCard>
-
+        <ProjectCard name="URL Scrub" url="https://urlscrub.com">
+            <p>
+                A tool for building and cleaning URLs. Use the visual URL
+                builder, or paste in a URL and automatically remove tracking
+                parameters to protect your privacy.
+            </p>
+            <Image
+                src={urlScrubImage}
+                class="hidden sm:block w-64"
+                alt="URL Scrub screenshot"
+            />
+        </ProjectCard>
         <ProjectCard
             name="json-colorizer"
             url="https://npmjs.com/package/json-colorizer"
@@ -37,7 +50,7 @@ import picmoImage from '../images/projects/picmo.png';
             <Image
                 src={jsonColorizerImage}
                 class="hidden sm:block w-64"
-                alt="Web API Demos"
+                alt="json-colorizer output"
             />
         </ProjectCard>
         <ProjectCard
@@ -57,7 +70,7 @@ import picmoImage from '../images/projects/picmo.png';
             <Image
                 src={picmoImage}
                 class="hidden sm:block w-64"
-                alt="Web API Demos"
+                alt="PicMo screenshot"
             />
         </ProjectCard>
         <ProjectCard
@@ -68,6 +81,11 @@ import picmoImage from '../images/projects/picmo.png';
                 A guided project series on building a basic toast notification
                 system in a Svelte application. Published by Educative.
             </p>
+            <Image
+                src={svelteToastImage}
+                class="hidden sm:block w-64"
+                alt="Svelte Toast logo"
+            />
         </ProjectCard>
     </div>
 </MainLayout>

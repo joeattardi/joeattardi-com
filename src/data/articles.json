@@ -1,5 +1,12 @@
 [
     {
+        "title": "How and when to use JavaScript arrow functions",
+        "date": "2025-02-17",
+        "source": "LogRocket",
+        "url": "https://blog.logrocket.com/javascript-arrow-functions/",
+        "description": "Arrow functions have a simpler syntax than standard functions, and there are some important differences in how they behave."
+    },
+    {
         "title": "Working with URLs in JavaScript",
         "date": "2024-12-19",
         "source": "LogRocket",
