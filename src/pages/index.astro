@@ -9,36 +9,44 @@ const posts = (await getCollection('blog'))
 ---
 
 <MainLayout>
-    <div class="flex flex-col-reverse items-center gap-4 sm:flex-row">
-        <div class="flex flex-col items-center sm:items-start gap-4">
-            <p class="text-4xl sm:text-6xl">Hi, I'm Joe!</p>
-            <p
-                class="text-2xl text-center sm:text-4xl sm:text-left text-zinc-500 dark:text-zinc-400"
-            >
-                Building intuitive, user-friendly web experiences and sharing
-                insights from over 20 years of software development.
-            </p>
-            <p class="text-xl">
-                I've been a software developer since 2004, specializing in
-                front-end development and creating user-friendly, accessible
-                interfaces. I also write articles and books on web development
-                to share knowledge with the tech community.
-            </p>
-            <h2 class="text-2xl font-bold">Want to get in touch?</h2>
-            <p class="text-xl">
-                Reach out on <a
-                    class="underline"
-                    href="https://x.com/JoeAttardi">X</a
-                > or <a
-                    class="underline"
-                    href="https://linkedin.com/in/JoeAttardi">LinkedIn</a
-                >, or shoot me an email at <a
-                    class="underline"
-                    href="mailto:jattardi@gmail.com">jattardi@gmail.com</a
-                >. Hope to hear from you!
-            </p>
-            <div class="mt-2 flex flex-col gap-4">
-                <h2 class="text-2xl font-bold">Latest blog posts</h3>
+    <div class="flex flex-col gap-4">
+        <div class="flex flex-col-reverse items-center gap-4 sm:flex-row">
+            <div class="flex flex-col items-center sm:items-start gap-4">
+                <p class="text-4xl sm:text-5xl font-black">Hi, I'm Joe!</p>
+                <p
+                    class="text-xl text-center sm:text-2xl sm:text-left text-zinc-500 dark:text-zinc-400"
+                >
+                    Building intuitive, user-friendly web experiences and
+                    sharing insights from over 20 years of software development.
+                </p>
+                <p class="text-xl">
+                    I've been a software developer since 2004, specializing in
+                    front-end development and creating user-friendly, accessible
+                    interfaces. I also write articles and books on web
+                    development to share knowledge with the tech community.
+                </p>
+                <p>
+                    <strong>New!</strong> Subscribe to my newsletter, <a
+                        class="underline"
+                        href="https://frontendnotes.substack.com"
+                        >Frontend Notes</a
+                    >.
+                </p>
+                <h2 class="text-2xl font-bold">Want to get in touch?</h2>
+                <p class="text-xl">
+                    Reach out on <a
+                        class="underline"
+                        href="https://x.com/JoeAttardi">X</a
+                    > or <a
+                        class="underline"
+                        href="https://linkedin.com/in/JoeAttardi">LinkedIn</a
+                    >, or shoot me an email at <a
+                        class="underline"
+                        href="mailto:jattardi@gmail.com">jattardi@gmail.com</a
+                    >. Hope to hear from you!
+                </p>
+                <!-- <div class="mt-2 flex flex-col gap-4">
+                <h2 class="text-2xl font-bold">Latest blog posts</h2>
                 {
                     posts.map((post) => (
                         <article>
@@ -57,11 +65,22 @@ const posts = (await getCollection('blog'))
                         </article>
                     ))
                 }
+            </div> -->
             </div>
+            <img
+                src="/joe.jpg"
+                class="sm:self-start rounded-full w-1/2 sm:w-72 border-8 border-transparent dark:border-slate-600"
+            />
         </div>
-        <img
-            src="/joe.jpg"
-            class="sm:self-start rounded-full w-1/2 sm:w-72 border-8 border-transparent dark:border-slate-600"
-        />
+        <!-- <div class="flex flex-col gap-4">
+            <h2 class="text-2xl font-bold">Subscribe to my newsletter</h2>
+            <iframe
+                src="https://frontendnotes.substack.com/embed"
+                width="480"
+                height="320"
+                style="border:1px solid #EEE; background:white;"
+                frameborder="0"
+                scrolling="no"></iframe>
+        </div> -->
     </div>
 </MainLayout>
