@@ -65,8 +65,9 @@ const posts = (await getCollection('blog'))
                         <article
                             class={clsx(
                                 'grid grid-rows-[min-content_1fr_min-content] gap-4 p-4',
-                                'rounded shadow bg-stone-50 border border-stone-200',
-                                'dark:bg-stone-800 dark:border-stone-600'
+                                'rounded shadow border bg-stone-100 border-stone-200',
+                                'dark:bg-stone-800 dark:border-stone-600',
+                                'hover:scale-105 transition-transform'
                             )}
                         >
                             <h4 class="text-xl font-bold">
