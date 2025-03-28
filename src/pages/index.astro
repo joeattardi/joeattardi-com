@@ -1,6 +1,5 @@
 ---
 import { getCollection } from 'astro:content';
-import { Icon } from 'astro-icon/components';
 import MainLayout from '../layouts/MainLayout.astro';
 import SocialButton from '../components/SocialButton.astro';
 import clsx from 'clsx';
@@ -55,7 +54,7 @@ const posts = (await getCollection('blog'))
             </div>
             <img
                 src="/joe.jpg"
-                class="sm:self-start rounded-full w-1/2 sm:w-72 border-8 border-transparent dark:border-slate-600"
+                class="avatar sm:self-start rounded-full w-1/2 sm:w-72 border-8 border-transparent dark:border-slate-600"
             />
         </div>
         <section class="flex flex-col gap-8">
@@ -103,3 +102,25 @@ const posts = (await getCollection('blog'))
         </section>
     </div>
 </MainLayout>
+
+<style>
+    @keyframes wiggle {
+        0%,
+        100% {
+            transform: scale(1) rotate(0deg);
+        }
+        25% {
+            transform: scale(1.05) rotate(3deg);
+        }
+        50% {
+            transform: scale(1.05) rotate(-3deg);
+        }
+        75% {
+            transform: scale(1.05) rotate(2deg);
+        }
+    }
+
+    .avatar:hover {
+        animation: wiggle 0.5s ease-in-out;
+    }
+</style>
