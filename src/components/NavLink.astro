@@ -10,11 +10,9 @@ const isActive = href === pathname || href === '/' + subpath?.[0];
     <a
         role="menuitem"
         class:list={[
-            'text-3xl sm:text-lg p-2',
+            'text-3xl sm:text-base py-2 px-4 hover:bg-slate-200 rounded-full',
             {
-                'sm:font-bold sm:border-b-4 sm:border-b-blue-700': isActive,
-                'sm:hover:border-b-4 sm:hover:border-b-blue-200 sm:dark:hover:border-b-blue-800':
-                    !isActive
+                'sm:font-bold sm:hover:bg-slate-300 sm:bg-slate-300 sm:rounded-full': isActive,
             }
         ]}
         href={href}

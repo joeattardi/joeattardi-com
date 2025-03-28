@@ -2,13 +2,14 @@
 import NavLink from './NavLink.astro';
 ---
 
-<nav>
+<nav class="m-auto py-1 px-2">
     <ul
         role="menubar"
         id="top-nav"
         class:list={[
+            'm-auto',
             'bg-slate-300 dark:bg-slate-800 dark:border-slate-700 border border-slate-300 w-2/3 p-4 fixed right-0 top-0 z-10 hidden h-full rounded py-16',
-            'md:border-none md:bg-transparent md:dark:bg-transparent md:w-auto md:relative md:flex md:top-0 md:h-auto md:items-center md:gap-4 md:p-0 md:m-0'
+            'md:border-none md:bg-transparent md:dark:bg-transparent md:w-auto md:relative md:flex md:top-0 md:h-auto md:items-center md:gap-2 md:p-0 md:m-0'
         ]}
     >
         <NavLink href="/books">Books</NavLink>
