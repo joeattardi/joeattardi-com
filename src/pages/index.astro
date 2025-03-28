@@ -10,7 +10,7 @@ const posts = (await getCollection('blog'))
 ---
 
 <MainLayout>
-    <div class="flex flex-col gap-4 mt-8">
+    <div class="flex flex-col gap-8 mt-8">
         <div class="flex flex-col-reverse items-center gap-4 sm:flex-row">
             <div class="flex flex-col items-center sm:items-start gap-4">
                 <p class="text-4xl sm:text-5xl font-black">Hi, I'm Joe!</p>
@@ -58,7 +58,7 @@ const posts = (await getCollection('blog'))
             />
         </div>
         <section class="flex flex-col gap-8">
-            <h2 class="text-2xl font-bold">Latest blog posts</h2>
+            <h2 class="text-center text-3xl font-bold">Latest blog posts</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {
                     posts.map((post) => (
@@ -100,6 +100,12 @@ const posts = (await getCollection('blog'))
             >
                 View All Posts</a
             >
+        </section>
+        <section class="flex flex-col gap-4 w-3/5 mx-auto text-center items-center">
+            <h2 class="text-center text-3xl font-bold">Subscribe to my newsletter</h2>
+            <p>Get periodic posts about software development, with a frontend focus.</p>
+            <p><strong>No spam.</strong> Unsubscribe at any time.</p>
+            <iframe src="https://frontendnotes.substack.com/embed" width="480" height="150" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
         </section>
     </div>
 </MainLayout>
