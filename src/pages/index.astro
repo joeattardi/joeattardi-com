@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import { Icon } from 'astro-icon/components';
 import MainLayout from '../layouts/MainLayout.astro';
+import SocialButton from '../components/SocialButton.astro';
+import clsx from 'clsx';
 
 const posts = (await getCollection('blog'))
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -9,7 +11,7 @@ const posts = (await getCollection('blog'))
 ---
 
 <MainLayout>
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-4 mt-8">
         <div class="flex flex-col-reverse items-center gap-4 sm:flex-row">
             <div class="flex flex-col items-center sm:items-start gap-4">
                 <p class="text-4xl sm:text-5xl font-black">Hi, I'm Joe!</p>
@@ -25,31 +27,49 @@ const posts = (await getCollection('blog'))
                     interfaces. I also write articles and books on web
                     development to share knowledge with the tech community.
                 </p>
-                <p>
-                    <strong>New!</strong> Subscribe to my newsletter, <a
-                        class="underline"
-                        href="https://frontendnotes.substack.com"
-                        >Frontend Notes</a
-                    >.
-                </p>
-                <h2 class="text-2xl font-bold">Want to get in touch?</h2>
-                <p class="text-xl">
-                    Reach out on <a
-                        class="underline"
-                        href="https://x.com/JoeAttardi">X</a
-                    > or <a
-                        class="underline"
-                        href="https://linkedin.com/in/JoeAttardi">LinkedIn</a
-                    >, or shoot me an email at <a
-                        class="underline"
-                        href="mailto:jattardi@gmail.com">jattardi@gmail.com</a
-                    >. Hope to hear from you!
-                </p>
-                <!-- <div class="mt-2 flex flex-col gap-4">
-                <h2 class="text-2xl font-bold">Latest blog posts</h2>
+                <nav
+                    class="flex items-center gap-2 self-center"
+                    aria-label="Social links"
+                >
+                    <SocialButton
+                        title="Email"
+                        href="mailto:jattardi@gmail.com"
+                        icon="ph:envelope"
+                    />
+                    <SocialButton
+                        title="X"
+                        href="https://x.com/joeattardi"
+                        icon="fa6-brands:x-twitter"
+                    />
+                    <SocialButton
+                        title="LinkedIn"
+                        href="https://linkedin.com/in/JoeAttardi"
+                        icon="fa6-brands:linkedin"
+                    />
+                    <SocialButton
+                        title="GitHub"
+                        href="https://github.com/JoeAttardi"
+                        icon="fa6-brands:github"
+                    />
+                </nav>
+            </div>
+            <img
+                src="/joe.jpg"
+                class="sm:self-start rounded-full w-1/2 sm:w-72 border-8 border-transparent dark:border-slate-600"
+            />
+        </div>
+        <section class="flex flex-col gap-8">
+            <h2 class="text-2xl font-bold">Latest blog posts</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {
                     posts.map((post) => (
-                        <article>
+                        <article
+                            class={clsx(
+                                'grid grid-rows-[min-content_1fr_min-content] gap-4 p-4',
+                                'rounded shadow bg-stone-50 border border-stone-200',
+                                'dark:bg-stone-800 dark:border-stone-600'
+                            )}
+                        >
                             <h4 class="text-xl font-bold">
                                 <a href={`/blog/${post.slug}`}>
                                     {post.data.title}
@@ -58,29 +78,28 @@ const posts = (await getCollection('blog'))
                             <p>{post.data.description}</p>
                             <a
                                 href={`/blog/${post.slug}`}
-                                class="text-blue-600 dark:text-blue-400 flex items-center gap-1"
+                                class={clsx(
+                                    'text-sm bg-white border border-stone-300 py-2 px-4 rounded-md text-center',
+                                    'hover:bg-slate-100',
+                                    'dark:bg-stone-900 dark:border-stone-600'
+                                )}
                             >
-                                Read more <Icon name="ph:arrow-right" />
+                                Read More
                             </a>
                         </article>
                     ))
                 }
-            </div> -->
             </div>
-            <img
-                src="/joe.jpg"
-                class="sm:self-start rounded-full w-1/2 sm:w-72 border-8 border-transparent dark:border-slate-600"
-            />
-        </div>
-        <!-- <div class="flex flex-col gap-4">
-            <h2 class="text-2xl font-bold">Subscribe to my newsletter</h2>
-            <iframe
-                src="https://frontendnotes.substack.com/embed"
-                width="480"
-                height="320"
-                style="border:1px solid #EEE; background:white;"
-                frameborder="0"
-                scrolling="no"></iframe>
-        </div> -->
+            <a
+                class={clsx(
+                    'self-center text-sm bg-white border border-stone-300 py-2 px-4 rounded-md text-center',
+                    'hover:bg-slate-100',
+                    'dark:bg-stone-900 dark:border-stone-600'
+                )}
+                href="/blog"
+            >
+                View All Posts</a
+            >
+        </section>
     </div>
 </MainLayout>

@@ -1,6 +1,6 @@
 ---
 title: 'Beyond breakpoints: Leveraging user preference media queries in CSS'
-description: "As it turns out, media queries are useful for more than just responsive design. Learn how to use media queries to learn about certain device settings."
+description: "Learn how to use media queries to learn about certain device settings."
 image: '/blog/airplane-cockpit.jpg'
 imageCredit: 'Maël BALLAND/Unsplash'
 pubDate: '2024-10-23'
