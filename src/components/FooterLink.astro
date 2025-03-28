@@ -3,10 +3,34 @@ import { Icon } from 'astro-icon/components';
 const { icon, href, title } = Astro.props;
 ---
 
-<a href={href}>
+<a href={href} class="footer-link">
     <Icon
         name={icon}
         title={title}
         class="text-2xl text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-gray-400"
     />
 </a>
+
+<style>
+    @keyframes wiggle {
+        0% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(-5deg);
+        }
+        50% {
+            transform: rotate(5deg);
+        }
+        75% {
+            transform: rotate(-3deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    .footer-link:hover svg {
+        animation: wiggle 0.5s ease-in-out;
+    }
+</style>
