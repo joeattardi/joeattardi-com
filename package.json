@@ -18,9 +18,11 @@
     "@fontsource/bungee": "^5.2.7",
     "@tailwindcss/vite": "^4.2.3",
     "astro": "^6.1.8",
+    "astro-icon": "^1.1.5",
     "tailwindcss": "^4.2.3"
   },
   "devDependencies": {
+    "@iconify-json/fa7-solid": "^1.2.4",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1"
   }
