@@ -1,12 +1,33 @@
 ---
 import Logo from './Logo.astro';
+import NavLink from './NavLink.astro';
+
+const navLinks = [
+    { href: '/', label: 'Home' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/articles', label: 'Articles' },
+    { href: '/projects', label: 'Projects' },
+    { href: '/books', label: 'Books' },
+];
 ---
 
-<header class="px-4 py-2 border-b border-slate-200 flex items-center gap-2 bg-blue-50">
-    <div class="max-w-7xl w-full mx-auto">
-        <a href="/" class="flex items-center gap-2">
+<header class="sticky top-0 z-20 border-b border-slate-200/80 bg-linear-to-r from-blue-50 via-white to-amber-50 px-4 py-3 backdrop-blur">
+    <div class="mx-auto flex w-full max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <a href="/" class="group flex items-center gap-2">
             <Logo />
-            <h1 class="tracking-wide uppercase font-bold text-xl">Joe Attardi</h1>
+            <h1 class="text-xl font-bold uppercase tracking-wide text-slate-900 transition-colors group-hover:text-blue-700">
+                Joe Attardi
+            </h1>
         </a>
+
+        <nav aria-label="Primary">
+            <ul class="flex flex-wrap items-center gap-1 sm:gap-2">
+                {
+                    navLinks.map((link) => (
+                        <NavLink href={link.href}>{link.label}</NavLink>
+                    ))
+                }
+            </ul>
+        </nav>
     </div>
 </header>
