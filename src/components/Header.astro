@@ -1,7 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Logo from './Logo.astro';
-import NavLink from './NavLink.astro';
+import Nav from './Nav.astro';
+import MobileNav from './MobileNav.astro';
 
 const navLinks = [
     { href: '/', label: 'Home' },
@@ -12,7 +13,7 @@ const navLinks = [
 ];
 ---
 
-<header class="sticky top-0 z-60 border-b border-slate-200/80 bg-linear-to-r from-blue-50 via-white to-amber-50 px-4 py-3 backdrop-blur">
+<header class="z-60 border-b border-slate-200/80 bg-linear-to-r from-blue-50 via-white to-amber-50 px-4 py-3 backdrop-blur">
     <div class="mx-auto flex w-full max-w-7xl items-center justify-between">
         <a href="/" class="group flex items-center gap-2">
             <Logo />
@@ -32,114 +33,8 @@ const navLinks = [
             <Icon id="menu-open-icon" class="h-8 w-8" name="fa7-solid:bars" />
             <Icon id="menu-close-icon" name="fa7-solid:xmark" class="h-8 w-8 hidden" />
         </button>
-
-        <nav aria-label="Primary" class="hidden sm:block">
-            <ul class="flex flex-wrap items-center gap-1 sm:gap-2">
-                {
-                    navLinks.map((link) => (
-                        <NavLink href={link.href}>{link.label}</NavLink>
-                    ))
-                }
-            </ul>
-        </nav>
+        <Nav navLinks={navLinks} />
     </div>
-
 </header>
 
-<div
-    id="mobile-menu"
-    class="invisible fixed inset-0 z-50 overflow-y-auto bg-slate-950/95 px-6 pt-24 pb-8 opacity-0 transition-opacity duration-300 ease-out pointer-events-none sm:hidden"
-    aria-hidden="true"
->
-    <nav
-        id="mobile-menu-panel"
-        aria-label="Mobile primary navigation"
-        class="mx-auto max-w-md translate-x-8 transition-transform duration-300 ease-out"
-    >
-        <ul class="flex flex-col gap-4">
-            {
-                navLinks.map((link) => (
-                    <li>
-                        <a
-                            href={link.href}
-                            class="block rounded-lg border border-white/15 bg-slate-900/70 px-6 py-3 text-3xl font-semibold tracking-wide text-white transition hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
-                        >
-                            {link.label}
-                        </a>
-                    </li>
-                ))
-            }
-        </ul>
-    </nav>
-</div>
-
-<script>
-    const menuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuPanel = document.getElementById('mobile-menu-panel');
-    const openIcon = document.getElementById('menu-open-icon');
-    const closeIcon = document.getElementById('menu-close-icon');
-
-    if (menuButton && mobileMenu && mobileMenuPanel && openIcon && closeIcon) {
-        const transitionDurationMs = 300;
-        let closeTimer: ReturnType<typeof window.setTimeout> | null = null;
-
-        const setMenuState = (isOpen: boolean) => {
-            menuButton.setAttribute('aria-expanded', String(isOpen));
-            menuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-            mobileMenu.setAttribute('aria-hidden', String(!isOpen));
-            openIcon.classList.toggle('hidden', isOpen);
-            closeIcon.classList.toggle('hidden', !isOpen);
-            document.body.classList.toggle('overflow-hidden', isOpen);
-
-            if (closeTimer) {
-                window.clearTimeout(closeTimer);
-                closeTimer = null;
-            }
-
-            if (isOpen) {
-                mobileMenu.classList.remove('invisible', 'pointer-events-none', 'opacity-0');
-                mobileMenu.classList.add('pointer-events-auto');
-
-                window.requestAnimationFrame(() => {
-                    mobileMenu.classList.add('opacity-100');
-                    mobileMenuPanel.classList.remove('translate-x-8');
-                    mobileMenuPanel.classList.add('translate-x-0');
-                });
-
-                return;
-            }
-
-            mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
-            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-            mobileMenuPanel.classList.remove('translate-x-0');
-            mobileMenuPanel.classList.add('translate-x-8');
-
-            closeTimer = window.setTimeout(() => {
-                mobileMenu.classList.add('invisible');
-                closeTimer = null;
-            }, transitionDurationMs);
-        };
-
-        menuButton.addEventListener('click', () => {
-            const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-            setMenuState(!isOpen);
-        });
-
-        mobileMenu.querySelectorAll('a').forEach((link) => {
-            link.addEventListener('click', () => setMenuState(false));
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                setMenuState(false);
-            }
-        });
-
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 640) {
-                setMenuState(false);
-            }
-        });
-    }
-</script>
+<MobileNav navLinks={navLinks} />
