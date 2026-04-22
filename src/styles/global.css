@@ -2,3 +2,9 @@
 @import '@fontsource-variable/figtree';
 @import '@fontsource-variable/fraunces';
 @import '@fontsource/bungee';
+
+@theme {
+    --font-sans: 'Figtree Variable', sans-serif;
+    --font-serif: 'Fraunces Variable', serif;
+    --font-display: 'Bungee', cursive;
+}
