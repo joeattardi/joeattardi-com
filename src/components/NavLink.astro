@@ -1,11 +1,35 @@
 ---
+interface Props {
+    href: string;
+}
+
 const { href } = Astro.props;
+
+const normalizePath = (path: string) => {
+    if (path === '/') {
+        return path;
+    }
+
+    return path.replace(/\/+$/, '');
+};
+
+const currentPath = normalizePath(Astro.url.pathname);
+const targetPath = normalizePath(href);
+const isCurrentRoute = targetPath === '/'
+    ? currentPath === '/'
+    : currentPath === targetPath || currentPath.startsWith(`${targetPath}/`);
 ---
 
 <li>
     <a
         href={href}
-        class="rounded-full border border-transparent px-4 py-2 text-sm font-semibold tracking-[0.02em] text-slate-700 transition-all hover:-translate-y-0.5 hover:border-blue-200 hover:bg-white/80 hover:text-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+        aria-current={isCurrentRoute ? 'page' : undefined}
+        class:list={[
+            'rounded-full border px-4 py-2 text-sm font-semibold tracking-[0.02em] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400',
+            isCurrentRoute
+                ? 'border-blue-200 bg-white text-blue-700 shadow-sm'
+                : 'border-transparent text-slate-700 hover:-translate-y-0.5 hover:border-blue-200 hover:bg-white/80 hover:text-blue-700',
+        ]}
     >
         <slot />
     </a>
