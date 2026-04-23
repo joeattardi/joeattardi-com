@@ -5,15 +5,13 @@ import { Image } from 'astro:assets';
 ---
 
 <RootLayout>
-    <div class="flex gap-8">
-        <div class="flex flex-col gap-4">
-            <h1 class="font-bold text-6xl">
-                20+ years of building, writing, and breaking things (mostly on purpose).
-            </h1>
+    <div class="layout p-8">
+        <h1 class="title font-bold text-5xl md:text-6xl font-serif justify-self-center md:justify-self-start">Joe Attardi</h1>
+        <div class="description flex flex-col gap-4">
             <p class="text-xl">
-                I'm a front-end obsessed software engineer with a deep love for the modern
-                JavaScript ecosystem. I spend my days building functional web applications and my
-                nights staying ahead of the ever-evolving web.
+                I'm a software engineer with a deep love for the modern JavaScript ecosystem. I
+                spend my days building functional web applications and my nights staying ahead of
+                the ever-evolving web.
             </p>
             <p class="text-xl">
                 Beyond the code, I'm also a published author, sharing my insights and experiences
@@ -22,6 +20,46 @@ import { Image } from 'astro:assets';
                 others navigate the complexities of web development.
             </p>
         </div>
-        <Image class="w-96 h-96 rounded-full" src={avatar} alt="Photo of Joe Attardi" />
+        <Image
+            class="justify-self-center photo w-48 h-48 md:w-72 md:h-72 rounded-full border-8 border-slate-600"
+            src={avatar}
+            alt="Photo of Joe Attardi"
+        />
     </div>
 </RootLayout>
+
+<style>
+    .layout {
+        display: grid;
+        grid-template-areas:
+            'title photo'
+            'description photo';
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto 1fr;
+        gap: 1rem;
+        column-gap: 4rem;
+    }
+
+    .title {
+        grid-area: title;
+    }
+
+    .description {
+        grid-area: description;
+    }
+
+    .photo {
+        grid-area: photo;
+    }
+
+    @media (max-width: 768px) {
+        .layout {
+            grid-template-areas:
+                'photo'
+                'title'
+                'description';
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto;
+        }
+    }
+</style>
