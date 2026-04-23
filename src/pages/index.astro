@@ -1,7 +1,24 @@
 ---
 import RootLayout from '../layouts/RootLayout.astro';
+import avatar from '../assets/images/joe.png';
+import { Image } from 'astro:assets';
 ---
 
 <RootLayout>
-    <p>Welcome to my website!</p>
+    <h1 class="text-7xl font-serif font-bold">Joe Attardi</h1>
+    <h2 class="text-3xl font-serif text-slate-700">Software Engineer | Author</h2>
+    <Image src={avatar} alt="Photo of Joe Attardi" />
+    <h2 class="font-bold text-2xl">
+        20+ years of building, writing, and breaking things (mostly on purpose).
+    </h2>
+    <p>
+        Hi, I'm Joe. I'm a front-end obsessed software engineer with a deep love for the modern
+        JavaScript ecosystem. I spend my days building functional web applications and my nights
+        staying ahead of the ever-evolving web.
+    </p>
+    <p>
+        Beyond the code, I'm also a published author, sharing my insights and experiences through
+        writing. Whether it's crafting engaging articles or contributing to open-source projects, I
+        enjoy connecting with the developer community and helping others navigate the complexities of web development.
+    </p>
 </RootLayout>
