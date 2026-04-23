@@ -5,20 +5,23 @@ import { Image } from 'astro:assets';
 ---
 
 <RootLayout>
-    <h1 class="text-7xl font-serif font-bold">Joe Attardi</h1>
-    <h2 class="text-3xl font-serif text-slate-700">Software Engineer | Author</h2>
-    <Image src={avatar} alt="Photo of Joe Attardi" />
-    <h2 class="font-bold text-2xl">
-        20+ years of building, writing, and breaking things (mostly on purpose).
-    </h2>
-    <p>
-        Hi, I'm Joe. I'm a front-end obsessed software engineer with a deep love for the modern
-        JavaScript ecosystem. I spend my days building functional web applications and my nights
-        staying ahead of the ever-evolving web.
-    </p>
-    <p>
-        Beyond the code, I'm also a published author, sharing my insights and experiences through
-        writing. Whether it's crafting engaging articles or contributing to open-source projects, I
-        enjoy connecting with the developer community and helping others navigate the complexities of web development.
-    </p>
+    <div class="flex gap-8">
+        <div class="flex flex-col gap-4">
+            <h1 class="font-bold text-6xl">
+                20+ years of building, writing, and breaking things (mostly on purpose).
+            </h1>
+            <p class="text-xl">
+                I'm a front-end obsessed software engineer with a deep love for the modern
+                JavaScript ecosystem. I spend my days building functional web applications and my
+                nights staying ahead of the ever-evolving web.
+            </p>
+            <p class="text-xl">
+                Beyond the code, I'm also a published author, sharing my insights and experiences
+                through writing. Whether it's crafting engaging articles or contributing to
+                open-source projects, I enjoy connecting with the developer community and helping
+                others navigate the complexities of web development.
+            </p>
+        </div>
+        <Image class="w-96 h-96 rounded-full" src={avatar} alt="Photo of Joe Attardi" />
+    </div>
 </RootLayout>
