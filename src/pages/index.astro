@@ -3,10 +3,11 @@ import RootLayout from '../layouts/RootLayout.astro';
 import avatar from '../assets/images/joe.png';
 import oreillyLogo from '../assets/images/OReilly_logo_rgb.png';
 import apressLogo from '../assets/images/Apress-logo.png';
-import smashingLogo from '../assets/images/Smashing Magazine Logo.webp';
+import smashingLogo from '../assets/images/smashingmagazine.png';
 import logrocketLogo from '../assets/images/logrocket.png';
 import freecodecampLogo from '../assets/images/freecodecamp.png';
 import { Image } from 'astro:assets';
+import PublisherLogo from '../components/PublisherLogo.astro';
 ---
 
 <RootLayout>
@@ -32,14 +33,34 @@ import { Image } from 'astro:assets';
         />
     </div>
 
-    <div class="publishers">
-        <p class="publishers-label">Published with</p>
-        <div class="publishers-logos">
-            <Image src={oreillyLogo} alt="O'Reilly Media" height={28} class="publisher-logo" />
-            <Image src={apressLogo} alt="Apress" height={28} class="publisher-logo" />
-            <Image src={smashingLogo} alt="Smashing Magazine" height={28} class="publisher-logo" />
-            <Image src={logrocketLogo} alt="LogRocket" height={28} class="publisher-logo" />
-            <Image src={freecodecampLogo} alt="freeCodeCamp" height={28} class="publisher-logo" />
+    <div class="flex flex-col gap-4 items-center bg-white p-4 rounded-lg border border-slate-300">
+        <p class="uppercase tracking-wider text-sm text-slate-600 font-bold">Published with</p>
+        <div class="flex flex-wrap gap-8 items-center justify-center">
+            <PublisherLogo
+                imageUrl={oreillyLogo}
+                alt="O'Reilly Media"
+                href="https://learning.oreilly.com/search/?q=author%3A%22Joe%20Attardi%22&order_by=relevance&rows=100&language=en"
+            />
+            <PublisherLogo
+                imageUrl={apressLogo}
+                alt="Apress"
+                href="https://link.springer.com/search?contributor=Joe+Attardi&sortBy=newestFirst"
+            />
+            <PublisherLogo
+                imageUrl={smashingLogo}
+                alt="Smashing Magazine"
+                href="https://www.smashingmagazine.com/author/joe-attardi/"
+            />
+            <PublisherLogo
+                imageUrl={logrocketLogo}
+                alt="LogRocket"
+                href="https://blog.logrocket.com/author/joeattardi/"
+            />
+            <PublisherLogo
+                imageUrl={freecodecampLogo}
+                alt="freeCodeCamp"
+                href="https://www.freecodecamp.org/news/author/joeattardi/"
+            />
         </div>
     </div>
 </RootLayout>
@@ -66,45 +87,6 @@ import { Image } from 'astro:assets';
 
     .photo {
         grid-area: photo;
-    }
-
-    .publishers {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.25rem;
-        padding: 2.5rem 0 1rem;
-        border-top: 1px solid #e2e8f0;
-        margin-top: 2rem;
-    }
-
-    .publishers-label {
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: #94a3b8;
-    }
-
-    .publishers-logos {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        gap: 2.5rem 3.5rem;
-    }
-
-    .publisher-logo {
-        width: auto;
-        object-fit: contain;
-        opacity: 0.55;
-        filter: grayscale(1);
-        transition: opacity 150ms ease, filter 150ms ease;
-    }
-
-    .publisher-logo:hover {
-        opacity: 0.9;
-        filter: grayscale(0);
     }
 
     @media (max-width: 768px) {
