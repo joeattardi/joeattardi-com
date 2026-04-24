@@ -8,11 +8,16 @@ import logrocketLogo from '../assets/images/logrocket.png';
 import freecodecampLogo from '../assets/images/freecodecamp.png';
 import { Image } from 'astro:assets';
 import PublisherLogo from '../components/PublisherLogo.astro';
+import SocialLink from '../components/SocialLink.astro';
 ---
 
 <RootLayout>
     <div class="layout p-8">
-        <h1 class="title font-bold text-5xl md:text-6xl font-serif justify-self-center md:justify-self-start">Joe Attardi</h1>
+        <h1
+            class="title font-bold text-5xl md:text-6xl font-serif justify-self-center md:justify-self-start"
+        >
+            Joe Attardi
+        </h1>
         <div class="description flex flex-col gap-4">
             <p class="text-xl">
                 I'm a software engineer with a deep love for the modern JavaScript ecosystem. I
@@ -26,11 +31,18 @@ import PublisherLogo from '../components/PublisherLogo.astro';
                 others navigate the complexities of web development.
             </p>
         </div>
-        <Image
-            class="justify-self-center photo w-48 h-48 md:w-72 md:h-72 rounded-full border-8 border-slate-600"
-            src={avatar}
-            alt="Photo of Joe Attardi"
-        />
+        <div class="photo flex flex-col items-center gap-4">
+            <Image
+                class="justify-self-center w-48 h-48 md:w-72 md:h-72 rounded-full border-8 border-slate-600"
+                src={avatar}
+                alt="Photo of Joe Attardi"
+            />
+            <div class="flex items-center gap-2">
+                <SocialLink icon="fa7-brands:x-twitter" href="https://x.com/joeattardi" title="X" />
+                <SocialLink icon="fa7-brands:linkedin" href="https://www.linkedin.com/in/joeattardi/" title="LinkedIn" />
+                <SocialLink icon="fa7-brands:github" href="https://github.com/joeattardi" title="GitHub" />
+            </div>
+        </div>
     </div>
 
     <div class="flex flex-col gap-4 items-center bg-white p-4 rounded-lg border border-slate-300">
