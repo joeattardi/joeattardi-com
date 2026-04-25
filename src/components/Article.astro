@@ -14,6 +14,13 @@ interface Props {
 }
 
 const { article } = Astro.props;
+const publishedDate = new Date(article.publishedDate);
+const formattedPublishedDate = new Intl.DateTimeFormat(undefined, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC'
+}).format(publishedDate);
 ---
 
 <article class="flex flex-col gap-2 items-start border border-l-8 border-l-indigo-600 border-slate-300 bg-white rounded-lg p-4">
@@ -29,15 +36,7 @@ const { article } = Astro.props;
         <div
             class="flex items-start md:flex-row md:items-center gap-2 uppercase tracking-wider font-semibold text-slate-500 text-sm flex-col"
         >
-            <span
-                >{
-                    new Date(article.publishedDate).toLocaleDateString(undefined, {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    })
-                }</span
-            >
+            <span>{formattedPublishedDate}</span>
             <span class="hidden md:block">|</span>
             <span>{article.publication}</span>
         </div>
