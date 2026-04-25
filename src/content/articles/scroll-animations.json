@@ -3,6 +3,6 @@
     "publishedDate": "2023-12-27",
     "publication": "LogRocket",
     "url": "https://blog.logrocket.com/scrolltimeline-api-scroll-linked-animations/",
-    "description": "CSS scrollTimeline introduces a new way to add scroll-linked animations to your webpage. Use and compare it to the Web Animations API here.",
+    "description": "A scroll-linked, or scroll-directed, animation is an animation that is controlled by an element’s scroll position. As you scroll up and down, the animation plays backward and forward.",
     "tags": ["CSS", "JavaScript"]
 }

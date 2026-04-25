@@ -3,6 +3,6 @@
     "publishedDate": "2022-12-23",
     "publication": "LogRocket",
     "url": "https://blog.logrocket.com/top-5-web-apis-performance-based-analysis/",
-    "description": "Learn about five web performance APIs, which have full browser support and offer many ways for you to measure your apps' performance.",
+    "description": "There are many tools available for analyzing your application’s performance. In this article, we will explore the Performance API, which is built into all modern browsers. Browser support for these APIs is very good, even going back as far as Internet Explorer 9.",
     "tags": ["JavaScript"]
 }

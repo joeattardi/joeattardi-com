@@ -3,6 +3,6 @@
     "publishedDate": "2024-10-02",
     "publication": "LogRocket",
     "url": "https://blog.logrocket.com/patterns-efficient-dom-manipulation-vanilla-javascript/",
-    "description": "Explore DOM manipulation patterns in JavaScript, such as choosing the right querySelector, caching elements, improving event handling, and more.",
+    "description": "These days, frameworks are all the rage. But sometimes we still turn to DOM manipulation with vanilla JavaScript. The typical pattern for DOM manipulation using vanilla JavaScript is something like this: first, you need to get a reference to the DOM element you want to work with. This is often done with functions like getElementById or querySelector.",
     "tags": ["JavaScript"]
 }
