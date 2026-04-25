@@ -1,0 +1,8 @@
+{
+    "title": "Working with URLs in JavaScript",
+    "publishedDate": "2024-12-19",
+    "publication": "LogRocket",
+    "url": "https://blog.logrocket.com/working-urls-javascript/",
+    "description": "Break down the parts of a URL and explore APIs for working with them in JavaScript, parsing them, building query strings, checking their validity, etc.",
+    "tags": ["JavaScript"]
+}

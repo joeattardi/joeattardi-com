@@ -1,0 +1,8 @@
+{
+    "title": "Using the ScrollTimeline API for scroll-linked animations",
+    "publishedDate": "2023-12-27",
+    "publication": "LogRocket",
+    "url": "https://blog.logrocket.com/scrolltimeline-api-scroll-linked-animations/",
+    "description": "CSS scrollTimeline introduces a new way to add scroll-linked animations to your webpage. Use and compare it to the Web Animations API here.",
+    "tags": ["CSS", "JavaScript"]
+}

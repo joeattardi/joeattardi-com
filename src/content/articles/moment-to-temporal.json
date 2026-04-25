@@ -1,0 +1,8 @@
+{
+    "title": "Moving From Moment.js To The JS Temporal API",
+    "description": "Practical “recipes” for migrating Moment-based code to the new Temporal API.",
+    "url": "https://www.smashingmagazine.com/2026/03/moving-from-moment-to-temporal-api/",
+    "publication": "Smashing Magazine",
+    "publishedDate": "2026-03-13",
+    "tags": ["JavaScript"]
+}

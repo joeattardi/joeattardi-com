@@ -1,0 +1,8 @@
+{
+    "title": "Patterns for efficient DOM manipulation with vanilla JavaScript",
+    "publishedDate": "2024-10-02",
+    "publication": "LogRocket",
+    "url": "https://blog.logrocket.com/patterns-efficient-dom-manipulation-vanilla-javascript/",
+    "description": "Explore DOM manipulation patterns in JavaScript, such as choosing the right querySelector, caching elements, improving event handling, and more.",
+    "tags": ["JavaScript"]
+}

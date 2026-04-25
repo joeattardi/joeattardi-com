@@ -1,0 +1,8 @@
+{
+    "title": "How JavaScript Promises Work - Handbook for Beginners",
+    "publishedDate": "2024-02-13",
+    "publication": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org/news/the-javascript-promises-handbook/",
+    "description": "Many operations, such as network requests, are asynchronous in nature. One of the most useful and powerful tools for working with asynchronous code is the Promise. In this handbook, you'll learn all about JavaScript Promises and how to use them.",
+    "tags": ["JavaScript"]
+}

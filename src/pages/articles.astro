@@ -1,0 +1,23 @@
+---
+import RootLayout from '../layouts/RootLayout.astro';
+import Article from '../components/Article.astro';
+import { getCollection } from 'astro:content';
+import PageTitle from '../components/PageTitle.astro';
+
+const articles = await getCollection('articles');
+articles.sort((a, b) => b.data.publishedDate.localeCompare(a.data.publishedDate));
+---
+
+<RootLayout title="Articles">
+    <div class="flex flex-col gap-4">
+        <PageTitle title="Articles" />
+        <p class="text-lg">
+            Beyond this site, I occasionally contribute technical deep-dives and tutorials to
+            various industry publications. You can find a selection of my freelance guest posts and
+            featured articles below.
+        </p>
+        <div class="flex flex-col gap-6 p-4">
+            {articles.map((article) => <Article article={article.data} />)}
+        </div>
+    </div>
+</RootLayout>
