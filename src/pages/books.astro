@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import RootLayout from '../layouts/RootLayout.astro';
+import PageTitle from '../components/PageTitle.astro';
+import BookItem from '../components/BookItem.astro';
+
+const books = await getCollection('books');
+books.sort((a, b) => b.data.year - a.data.year);
+---
+<RootLayout title="Books">
+    <div class="flex flex-col gap-4">
+        <PageTitle title="Books" />
+        <div class="flex flex-col gap-4">
+            {books.map(book => (
+                <BookItem book={book.data} />
+            ))}
+        </div>
+    </div>
+</RootLayout>
