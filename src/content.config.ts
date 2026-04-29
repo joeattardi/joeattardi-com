@@ -19,12 +19,17 @@ const books = defineCollection({
     loader: glob({ base: './src/content/books', pattern: '*.md' }),
     schema: z.object({
         title: z.string(),
+        subtitle: z.string(),
         cover: z.string(),
         publisher: z.string(),
         year: z.number(),
-        href: z.url(),
+        websiteUrl: z.url().optional(),
         summary: z.string(),
         amazonUrl: z.url(),
+        buyLinks: z.array(z.object({
+            name: z.string(),
+            href: z.url()
+        })).optional(),
         contents: z.array(z.object({
             title: z.string(),
             description: z.string()
