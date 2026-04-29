@@ -5,6 +5,7 @@ summary: 'The new guide to modern CSS. An updated tour of CSS, updated to cover 
 publisher: 'Apress'
 year: 2025
 href: 'https://moderncss.cc'
+amazonUrl: 'https://www.amazon.com/Modern-CSS-Master-Concepts-Development/dp/B0FD2FQV3D'
 contents:
     - title: 'Introduction to CSS'
       description: 'Get started with CSS fundamentals and understand its role in modern web development.'

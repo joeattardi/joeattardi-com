@@ -24,6 +24,7 @@ const books = defineCollection({
         year: z.number(),
         href: z.url(),
         summary: z.string(),
+        amazonUrl: z.url(),
         contents: z.array(z.object({
             title: z.string(),
             description: z.string()

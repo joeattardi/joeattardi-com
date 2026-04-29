@@ -5,6 +5,7 @@ publisher: "O'Reilly Media"
 summary: 'Leverage the powerful APIs built into modern web browsers to add advanced capabilities to your vanilla JavaScript applications.'
 year: 2024
 href: 'https://webapis.info'
+amazonUrl: 'https://www.amazon.com/Web-API-Cookbook-JavaScript-Applications/dp/1098150694'
 contents:
     - title: 'Asynchronous APIs'
       description: 'Explore fundamental asynchronous JavaScript concepts, including callback functions and Promises.'
