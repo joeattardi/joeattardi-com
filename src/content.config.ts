@@ -22,7 +22,8 @@ const books = defineCollection({
         cover: z.string(),
         publisher: z.string(),
         year: z.number(),
-        href: z.url()
+        href: z.url(),
+        summary: z.string()
     })
 });
 
