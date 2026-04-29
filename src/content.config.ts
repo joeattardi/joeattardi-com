@@ -23,7 +23,11 @@ const books = defineCollection({
         publisher: z.string(),
         year: z.number(),
         href: z.url(),
-        summary: z.string()
+        summary: z.string(),
+        contents: z.array(z.object({
+            title: z.string(),
+            description: z.string()
+        }))
     })
 });
 
