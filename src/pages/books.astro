@@ -6,13 +6,15 @@ import BookItem from '../components/BookItem.astro';
 
 const books = await getCollection('books');
 books.sort((a, b) => b.data.year - a.data.year);
+
+console.log(books);
 ---
 <RootLayout title="Books">
     <div class="flex flex-col gap-4">
         <PageTitle title="Books" />
         <div class="flex flex-col lg:grid lg:grid-cols-2 gap-4">
             {books.map(book => (
-                <BookItem book={book.data} />
+                <BookItem book={book} />
             ))}
         </div>
     </div>

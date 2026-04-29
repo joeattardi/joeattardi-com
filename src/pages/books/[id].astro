@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import RootLayout from '../../layouts/RootLayout.astro';
+
+export async function getStaticPaths() {
+    const books = await getCollection('books');
+    return books.map((book) => ({
+        params: { id: book.id },
+        props: { book }
+    }));
+}
+
+const { book } = Astro.props;
+console.log(book);
+---
+
+<RootLayout title={book.data.title}>
+    <div class="flex items-start gap-4">
+        <img class="w-64" src={book.data.cover} />
+        <div class="flex flex-col gap-4">
+            <h1 class="text-8xl font-serif">{book.data.title}</h1>
+            <p class="text-3xl">{book.data.summary}</p>
+        </div>
+    </div>
+</RootLayout>

@@ -5,20 +5,20 @@ const { book } = Astro.props;
 <article
     class="flex flex-col md:flex-row gap-8 items-start border border-slate-200 bg-white rounded-lg p-8"
 >
-    <a href={book.href} target="_blank" rel="noopener noreferrer" class="p-8 bg-slate-100 border border-slate-200 rounded-lg md:mx-0 mx-auto shrink-0">
-        <img class="w-32" src={book.cover} />
+    <a href={`/books/${book.id}`} class="p-8 bg-slate-100 border border-slate-200 rounded-lg md:mx-0 mx-auto shrink-0">
+        <img class="w-32" src={book.data.cover} />
     </a>
     <div class="flex flex-col gap-2">
         <h2 class="text-3xl font-serif">
-            <a href={book.href} target="_blank" rel="noopener noreferrer" class="text-indigo-600"
-                >{book.title}</a
+            <a href={`/books/${book.id}`} class="text-indigo-600"
+                >{book.data.title}</a
             >
         </h2>
         <p class="text-sm text-gray-600 uppercase tracking-wider font-semibold">
-            {book.publisher}, {book.year}
+            {book.data.publisher}, {book.data.year}
         </p>
         <p>
-            {book.summary}
+            {book.data.summary}
         </p>
     </div>
 </article>
