@@ -25,7 +25,12 @@ const { book } = Astro.props;
 
 <style>
     .book-link {
-        overflow: hidden;
+        transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .book-item:hover .book-link {
+        background: transparent;
+        border-color: transparent;
     }
 
     .book-item img {
