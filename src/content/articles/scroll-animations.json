@@ -4,5 +4,6 @@
     "publication": "LogRocket",
     "url": "https://blog.logrocket.com/scrolltimeline-api-scroll-linked-animations/",
     "description": "A scroll-linked, or scroll-directed, animation is an animation that is controlled by an element’s scroll position. As you scroll up and down, the animation plays backward and forward.",
-    "tags": ["CSS", "JavaScript"]
+    "tags": ["CSS", "JavaScript"],
+    "icon": "logrocket.png"
 }

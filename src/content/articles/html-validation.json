@@ -4,5 +4,6 @@
     "publication": "LogRocket",
     "url": "https://blog.logrocket.com/when-how-to-choose-html-form-validation",
     "description": "One of the most common uses of JavaScript in web applications is form validation. Client-side form validation gives users near-immediate feedback about whether or not their input data is valid. HTML5 and the modern DOM APIs are already equipped for form validation.",
+    "icon": "logrocket.png",
     "tags": ["HTML", "JavaScript"]
 }

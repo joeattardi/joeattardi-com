@@ -4,5 +4,6 @@
     "publication": "LogRocket",
     "url": "https://blog.logrocket.com/top-5-web-apis-performance-based-analysis/",
     "description": "There are many tools available for analyzing your application’s performance. In this article, we will explore the Performance API, which is built into all modern browsers. Browser support for these APIs is very good, even going back as far as Internet Explorer 9.",
-    "tags": ["JavaScript"]
+    "tags": ["JavaScript"],
+    "icon": "logrocket.png"
 }
