@@ -38,4 +38,18 @@ const books = defineCollection({
     })
 });
 
-export const collections = { articles, books };
+const projects = defineCollection({
+    loader: glob({ base: './src/content/projects', pattern: '*.md' }),
+    schema: z.object({
+        name: z.string(),
+        icon: z.string().optional(),
+        image: z.string().optional(),
+        description: z.string(),
+        tags: z.array(z.string()),
+        url: z.url().optional(),
+        githubUrl: z.url().optional(),
+        featured: z.boolean().optional()
+    })
+});
+
+export const collections = { articles, books, projects };
