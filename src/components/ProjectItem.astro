@@ -28,7 +28,7 @@ const { project } = Astro.props;
         <a
             href={project.data.url}
             target="_blank"
-            class="flex items-start gap-2 hover:underline text-indigo-600"
+            class="flex items-start gap-2 hover:underline text-link"
         >
             <h2 class="text-2xl md:text-3xl font-serif">{project.data.name}</h2>
         </a>
@@ -47,7 +47,7 @@ const { project } = Astro.props;
             <a href={project.data.url} class="hover:scale-110 transition-transform">
                 <Icon
                     name="fa7-solid:globe-americas"
-                    class="w-6 h-6 text-gray-600 hover:text-indigo-600 transition-colors duration-300"
+                    class="w-6 h-6 text-gray-600 hover:text-link transition-colors duration-300"
                 />
             </a>
             {
@@ -55,7 +55,7 @@ const { project } = Astro.props;
                     <a href={project.data.githubUrl} class="hover:scale-110 transition-transform">
                         <Icon
                             name="fa7-brands:github"
-                            class="w-6 h-6 text-gray-600 hover:text-indigo-600 transition-colors duration-300"
+                            class="w-6 h-6 text-gray-600 hover:text-link transition-colors duration-300"
                         />
                     </a>
                 )

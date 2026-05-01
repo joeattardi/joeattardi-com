@@ -7,4 +7,6 @@
     --font-sans: 'Figtree Variable', sans-serif;
     --font-serif: 'Fraunces Variable', serif;
     --font-display: 'Bungee', cursive;
+    
+    --color-link: var(--color-indigo-600);
 }
