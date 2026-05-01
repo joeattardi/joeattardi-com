@@ -1,0 +1,28 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const { project } = Astro.props;
+---
+
+<article class="border border-slate-200 bg-white rounded-lg flex items-stretch gap-4 overflow-hidden group">
+    <div class="relative w-48 shrink-0 overflow-hidden self-stretch">
+        {project.data.image ? (
+            <img class="absolute inset-0 block w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={`/projects/${project.data.image}`} />
+        ) : (
+            <div class="absolute inset-0 flex items-center justify-center bg-linear-to-br from-pink-500 to-rose-500 text-white group-hover:scale-110 transition-transform duration-500">
+                <Icon class="w-16 h-16" name={project.data.icon} />
+            </div>
+        )}
+    </div>
+    <div class="flex flex-col items-start gap-2 p-4">
+        <a href={`/projects/${project.id}`}>
+            <h2 class="text-indigo-600 text-2xl font-serif">{project.data.name}</h2>
+        </a>
+        <p>{project.data.description}</p>
+        <div>
+            {project.data.tags.map((tag: string) => (
+                <span class="inline-block bg-slate-100 text-sm text-gray-600 px-2 py-1 rounded mr-2 mt-2">{tag}</span>
+            ))}
+        </div>
+    </div>
+</article>

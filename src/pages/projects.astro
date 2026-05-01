@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import RootLayout from '../layouts/RootLayout.astro';
+import PageTitle from '../components/PageTitle.astro';
+import ProjectItem from '../components/ProjectItem.astro';
+
+const projects = await getCollection('projects');
+---
+<RootLayout title="Projects">
+    <div class="flex flex-col gap-8">
+        <PageTitle title="Projects" />
+        <div class="flex flex-col lg:grid lg:grid-cols-2 gap-4">
+            {projects.map(project => (
+                <ProjectItem project={project} />
+            ))}
+        </div>
+
+    </div>
+</RootLayout>

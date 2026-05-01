@@ -5,5 +5,5 @@ url: 'https://urlscrub.com'
 githubUrl: 'https://github.com/joeattardi/urlscrub'
 tags: ['JavaScript', 'React']
 image: 'url-scrub.png'
-url: 'fa7-solid:globe-americas'
+icon: 'fa7-solid:globe-americas'
 ---
