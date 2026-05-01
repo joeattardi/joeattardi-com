@@ -5,4 +5,6 @@ tags: ['AI', 'JavaScript', 'Svelte']
 url: 'https://shortener.manning.com/pZOG'
 image: 'BuildinganAIVoiceAssistant.png'
 icon: 'fa7-solid:microphone'
+publisher: 'Manning Publications'
+publisherIcon: '/manning.png'
 ---

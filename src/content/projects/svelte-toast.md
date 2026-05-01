@@ -5,4 +5,6 @@ url: 'https://www.educative.io/projects/build-a-toast-notification-system-with-s
 tags: ['JavaScript', 'Svelte']
 image: 'svelte-toast.png'
 icon: 'fa7-solid:message'
+publisher: 'Educative'
+publisherIcon: 'educative.png'
 ---

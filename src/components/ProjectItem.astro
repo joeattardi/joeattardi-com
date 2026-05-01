@@ -4,25 +4,71 @@ import { Icon } from 'astro-icon/components';
 const { project } = Astro.props;
 ---
 
-<article class="border border-slate-200 bg-white rounded-lg flex flex-col md:flex-row items-stretch gap-4 overflow-hidden group">
-    <div class="relative md:w-48 md:h-full w-full h-32 shrink-0 overflow-hidden self-stretch">
-        {project.data.image ? (
-            <img class="absolute inset-0 block w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={`/projects/${project.data.image}`} />
-        ) : (
-            <div class="absolute inset-0 flex items-center justify-center bg-linear-to-br from-pink-500 to-rose-500 text-white group-hover:scale-110 transition-transform duration-500">
-                <Icon class="w-16 h-16" name={project.data.icon} />
-            </div>
-        )}
-    </div>
+<article
+    class="border border-slate-200 bg-white rounded-lg flex flex-col md:flex-row items-stretch gap-4 overflow-hidden group"
+>
+    <a
+        href={project.data.url}
+        class="relative md:w-48 md:h-full w-full h-32 shrink-0 overflow-hidden self-stretch"
+    >
+        {
+            project.data.image ? (
+                <img
+                    class="absolute inset-0 block w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    src={`/projects/${project.data.image}`}
+                />
+            ) : (
+                <div class="absolute inset-0 flex items-center justify-center bg-linear-to-br from-pink-500 to-rose-500 text-white group-hover:scale-110 transition-transform duration-500">
+                    <Icon class="w-16 h-16" name={project.data.icon} />
+                </div>
+            )
+        }
+    </a>
     <div class="flex flex-col items-start gap-2 p-4">
-        <a href={`/projects/${project.id}`}>
-            <h2 class="text-indigo-600 text-2xl font-serif">{project.data.name}</h2>
+        <a
+            href={project.data.url}
+            target="_blank"
+            class="flex items-start gap-2 hover:underline text-indigo-600"
+        >
+            <h2 class="text-2xl md:text-3xl font-serif">{project.data.name}</h2>
         </a>
+        {
+            project.data.publisher && (
+                <div class="flex items-center gap-2">
+                    <img src={project.data.publisherIcon} alt={project.data.publisher} class="w-4 h-4" />
+                    <small class="text-slate-500 uppercase tracking-wide">
+                        {project.data.publisher}
+                    </small>
+                </div>
+            )
+        }
         <p>{project.data.description}</p>
+        <div class="flex items-center gap-2">
+            <a href={project.data.url} class="hover:scale-110 transition-transform">
+                <Icon
+                    name="fa7-solid:globe-americas"
+                    class="w-6 h-6 text-gray-600 hover:text-indigo-600 transition-colors duration-300"
+                />
+            </a>
+            {
+                project.data.githubUrl && (
+                    <a href={project.data.githubUrl} class="hover:scale-110 transition-transform">
+                        <Icon
+                            name="fa7-brands:github"
+                            class="w-6 h-6 text-gray-600 hover:text-indigo-600 transition-colors duration-300"
+                        />
+                    </a>
+                )
+            }
+        </div>
         <div>
-            {project.data.tags.map((tag: string) => (
-                <span class="inline-block bg-slate-100 text-sm text-gray-600 px-2 py-1 rounded mr-2 mt-2">{tag}</span>
-            ))}
+            {
+                project.data.tags.map((tag: string) => (
+                    <span class="inline-block bg-slate-100 text-sm text-gray-600 px-2 py-1 rounded mr-2 mt-2">
+                        {tag}
+                    </span>
+                ))
+            }
         </div>
     </div>
 </article>
