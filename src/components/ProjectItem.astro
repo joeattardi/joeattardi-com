@@ -4,8 +4,8 @@ import { Icon } from 'astro-icon/components';
 const { project } = Astro.props;
 ---
 
-<article class="border border-slate-200 bg-white rounded-lg flex items-stretch gap-4 overflow-hidden group">
-    <div class="relative w-48 shrink-0 overflow-hidden self-stretch">
+<article class="border border-slate-200 bg-white rounded-lg flex flex-col md:flex-row items-stretch gap-4 overflow-hidden group">
+    <div class="relative md:w-48 md:h-full w-full h-32 shrink-0 overflow-hidden self-stretch">
         {project.data.image ? (
             <img class="absolute inset-0 block w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src={`/projects/${project.data.image}`} />
         ) : (

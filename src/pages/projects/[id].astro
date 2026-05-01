@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import RootLayout from '../../layouts/RootLayout.astro';
+import PageTitle from '../../components/PageTitle.astro';
+import { Icon } from 'astro-icon/components';
+
+export async function getStaticPaths() {
+    const projects = await getCollection('projects');
+    return projects.map((project) => ({
+        params: { id: project.id },
+        props: { project }
+    }));
+}
+
+const { project } = Astro.props;
+---
+
+<RootLayout title={project.data.name}>
+    <div class="flex flex-col gap-4">
+        <h1 class="text-3xl font-bold md:text-5xl font-serif flex items-center gap-4">
+            <Icon name={project.data.icon} class="bg-linear-to-br text-white from-pink-500 to-rose-500 h-12 w-12 rounded-lg p-2"/>
+            {project.data.name}
+        </h1>
+        <div>
+            <p>{project.data.description}</p>
+            <div>
+                {
+                    project.data.tags.map((tag: string) => (
+                        <span class="inline-block bg-slate-100 text-sm text-gray-600 px-2 py-1 rounded mr-2 mt-2">
+                            {tag}
+                        </span>
+                    ))
+                }
+            </div>
+        </div>
+        <div class="prose" set:html={project.rendered?.html} />
+    </div>
+</RootLayout>
+
+<style is:global>
+    .prose {
+        p {
+            margin: 0.5em;
+            font-size: 1.1rem;
+        }
+
+        a {
+            color: var(--color-indigo-600);
+        }
+    }
+</style>
