@@ -1,1 +1,12 @@
-<footer class="p-4 bg-slate-200 text-sm text-slate-600">&copy; 2026 Joe Attardi</footer>
+---
+import FooterSocialLink from './FooterSocialLink.astro';
+---
+
+<footer class="p-4 bg-slate-200 text-sm text-slate-600 flex items-center justify-between">
+    <div>&copy; 2026 Joe Attardi</div>
+    <div class="flex items-center gap-2">
+        <FooterSocialLink icon="fa7-brands:x-twitter" href="https://x.com/joeattardi" title="X" />
+        <FooterSocialLink icon="fa7-brands:linkedin" href="https://www.linkedin.com/in/joeattardi/" title="LinkedIn" />
+        <FooterSocialLink icon="fa7-brands:github" href="https://github.com/joeattardi" title="GitHub" />
+    </div>
+</footer>
